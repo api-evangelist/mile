@@ -1,0 +1,229 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Customers API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Customers
+paths:
+  /api/v1/partners/create/customer:
+    post:
+      tags:
+      - Customers
+      summary: Create or update customer
+      description: This call Create or update customer based on is_update parameter
+      operationId: post_app_apiv1_trackingapi_createcustomer
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: is_update
+        in: query
+        description: Set to 1 for update existing customer, 0 for create new customer. Default is 0
+        schema:
+          type: integer
+      - name: customer_id
+        in: query
+        description: Customer ID (required when is_update=1)
+        schema:
+          type: integer
+      - name: customer_name
+        in: query
+        description: Customer Name
+        schema:
+          type: string
+      - name: customer_phone
+        in: query
+        description: Customer Phone
+        schema:
+          type: string
+      - name: is_receiver
+        in: query
+        description: Is Receiver (1 or 0)
+        schema:
+          type: string
+      - name: customer_home_address
+        in: query
+        description: Customer Home Address
+        schema:
+          type: string
+      - name: customer_home_latitude
+        in: query
+        description: Customer Home Latitude
+        schema:
+          type: number
+      - name: customer_home_longitude
+        in: query
+        description: Customer Home Longitude
+        schema:
+          type: number
+      - name: customer_work_address
+        in: query
+        description: Customer Work Address
+        schema:
+          type: string
+      - name: customer_work_latitude
+        in: query
+        description: Customer Work Latitude
+        schema:
+          type: number
+      - name: customer_work_longitude
+        in: query
+        description: Customer Work Longitude
+        schema:
+          type: number
+      - name: customer_default_address
+        in: query
+        description: possible values are home,work. Default value is home
+        schema:
+          type: string
+      - name: block
+        in: query
+        description: Customer Block
+        schema:
+          type: string
+      - name: area
+        in: query
+        description: Customer Area
+        schema:
+          type: string
+      - name: street
+        in: query
+        description: Customer Street
+        schema:
+          type: string
+      - name: building
+        in: query
+        description: Customer Building
+        schema:
+          type: string
+      - name: floor
+        in: query
+        description: Customer Floor
+        schema:
+          type: string
+      - name: apartment
+        in: query
+        description: Customer Apartment
+        schema:
+          type: string
+      - name: external_customer_code
+        in: query
+        description: External Customer Code/Id
+        schema:
+          type: string
+      - name: address_id
+        in: query
+        description: Address Id
+        schema:
+          type: string
+      - name: customer_group_id
+        in: query
+        description: Customer Group ID (Optional) 1:Direct, 2:Indirect
+        schema:
+          type: integer
+      - name: route_id
+        in: query
+        description: Route ID (Optional) - Highest priority for route assignment. If provided, customer will be assigned to this route by ID
+        schema:
+          type: integer
+      - name: route_name
+        in: query
+        description: Route Name (Optional) - Second priority. If route_id not provided, customer will be assigned to this route by name
+        schema:
+          type: string
+      - name: parent_id
+        in: query
+        description: Parent Customer ID (Optional)
+        schema:
+          type: string
+      - name: parent_customer_code
+        in: query
+        description: Parent Customer Code (Optional)
+        schema:
+          type: string
+      - name: parent_address_id
+        in: query
+        description: Parent Address Id (Optional)
+        schema:
+          type: string
+      - name: customer_type_id
+        in: query
+        description: "Customer Type:\n        1 = Individual Customer,\n        2 = Corporate Customer,\n        3 = Watchman,\n        4 = Supermarket,\n        5 = Abraaj FOC,\n        6 = Co-Packing,\n        7 = Co-operatives,\n        9 = E-commerce,\n        10 = Horeca,\n        12 = Mabara,\n        13 = Modern Trade,\n        14 = Mosques,\n        15 = Staff account"
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Returns the customer object
+  /api/v1/partners/customers/search:
+    get:
+      tags:
+      - Customers
+      summary: This call is to search customers
+      description: This call is to search customers
+      operationId: get_app_apiv1_trackingapi_customersearch
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: phone
+        in: query
+        description: Max 25 phone nos are allowed
+        schema:
+          type: array
+          items:
+            type: string
+      - name: external_code
+        in: query
+        description: SAP external code(s)
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: This call is to search customers
+    post:
+      tags:
+      - Customers
+      summary: This call is to search customers
+      description: This call is to search customers
+      operationId: post_app_apiv1_trackingapi_customersearch
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: phone
+        in: query
+        description: Max 25 phone nos are allowed
+        schema:
+          type: array
+          items:
+            type: string
+      - name: external_code
+        in: query
+        description: SAP external code(s)
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: This call is to search customers
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

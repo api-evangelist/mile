@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Order Optimization API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Order Optimization
+paths:
+  /api/v1/partners/optimize-orders:
+    post:
+      tags:
+      - Order Optimization
+      summary: Webhook endpoint for receiving orders and creating optimized Orders
+      description: This endpoint receives order data and creates optimized orders automatically
+      operationId: post_app_apiv1_trackingapi_optimizeorderswebhook
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: orders
+        in: query
+        description: 'Orders JSON - Array of orders to optimize. Example: [{"warehouse_id": "00","deliver_on": "2026-01-22","reference_id": "TEST-1735647600","customer": "Mobi mariam","phone": "123344566","customer_address": "123 Test Street","latitude": 12.0000000000,"longitude": 12.0000000000,"product_items": [{"product_id": 123456,"qty": 10,"unitPrice": 5.50 }]}]'
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns success status with optimization results
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

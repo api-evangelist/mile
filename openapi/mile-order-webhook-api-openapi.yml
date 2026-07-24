@@ -1,0 +1,99 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Order Webhook API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Order Webhook
+paths:
+  /api/v1/partners/webhook/order-status/configure:
+    post:
+      tags:
+      - Order Webhook
+      summary: Configure Order Status Webhook
+      description: Set your webhook URL to receive order status update notifications when order status changes
+      operationId: post_app_apiv1_trackingapi_configureorderstatuswebhook
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token (can be in query, body, or Authorization header)
+        schema:
+          type: string
+      - name: webhook_url
+        in: query
+        description: Your webhook URL to receive order status updates
+        required: true
+        schema:
+          type: string
+      - name: enabled
+        in: query
+        description: Enable/disable order status webhook (1=enabled, 0=disabled)
+        schema:
+          type: integer
+          default: 1
+      responses:
+        '200':
+          description: Order status webhook configured successfully
+  /api/v1/partners/order-creation/configure:
+    post:
+      tags:
+      - Order Webhook
+      summary: Configure Order Creation Webhook
+      description: Set your webhook URL to receive new order data when orders are created
+      operationId: post_app_apiv1_trackingapi_configureordercreationwebhook
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token (can be in query, body, or Authorization header)
+        schema:
+          type: string
+      - name: webhook_url
+        in: query
+        description: Your webhook URL to receive new order data
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Order creation webhook URL configured successfully
+  /api/v1/partners/send-order:
+    post:
+      tags:
+      - Order Webhook
+      summary: Send Order to External Platform - Dynamic ERP Integration
+      description: 'This endpoint sends order data to external platform via webhook.
+
+        For companies with ERP integration, it routes through the dynamic ERP system.'
+      operationId: post_app_apiv1_trackingapi_sendordertoexternalplatform
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: order_id
+        in: query
+        description: Order ID to send to external platform
+        required: true
+        schema:
+          type: integer
+      - name: webhook_url
+        in: query
+        description: External platform webhook URL
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Order sent to external platform successfully
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

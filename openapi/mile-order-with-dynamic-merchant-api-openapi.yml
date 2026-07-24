@@ -1,0 +1,170 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Order With Dynamic Merchant API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Order With Dynamic Merchant
+paths:
+  /api/v1/partners/order/merchant/create:
+    post:
+      tags:
+      - Order With Dynamic Merchant
+      summary: Order Create With Merchant
+      description: This call takes into account all confirmed awards, but not pending or refused awards.
+      operationId: post_app_apiv1_trackingapi_createorderwithmultimerchant
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: tracking_no
+        in: query
+        description: Tracking no
+        schema:
+          type: string
+      - name: reference_id
+        in: query
+        description: Reference id
+        schema:
+          type: string
+      - name: agent
+        in: query
+        description: Agent Name
+        schema:
+          type: string
+      - name: merchant_name
+        in: query
+        description: Merchant Id/Name
+        schema:
+          type: string
+      - name: merchant_phone
+        in: query
+        description: Merchant Phone (Optional)
+        schema:
+          type: string
+      - name: merchant_address
+        in: query
+        description: Merchant Address (Optional)
+        schema:
+          type: string
+      - name: merchant_branch_name
+        in: query
+        description: Merchant Branch Id/Name
+        schema:
+          type: string
+      - name: merchant_branch_phone
+        in: query
+        description: Merchant Branch Phone (Optional)
+        schema:
+          type: string
+      - name: merchant_branch_address
+        in: query
+        description: Merchant Branch Address (Optional)
+        schema:
+          type: string
+      - name: customer
+        in: query
+        description: Customer Name
+        schema:
+          type: string
+      - name: contact_person
+        in: query
+        description: Contact Person Name
+        schema:
+          type: string
+      - name: phone
+        in: query
+        description: Customer phone
+        schema:
+          type: string
+      - name: city
+        in: query
+        description: City
+        schema:
+          type: string
+      - name: customer_address
+        in: query
+        description: Customer Address
+        schema:
+          type: string
+      - name: pickup_address
+        in: query
+        description: Pickup Address
+        schema:
+          type: string
+      - name: receiver_address
+        in: query
+        description: Receiver Address
+        schema:
+          type: string
+      - name: receiver_name
+        in: query
+        description: Receiver Name
+        schema:
+          type: string
+      - name: receiver_phone
+        in: query
+        description: Receiver Phone
+        schema:
+          type: string
+      - name: cod
+        in: query
+        description: Cash on Delivery Amount
+        schema:
+          type: number
+      - name: description
+        in: query
+        description: Order Description
+        schema:
+          type: string
+      - name: is_pickup
+        in: query
+        description: is Pickup possible values are 1,0
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+      - name: payee
+        in: query
+        description: Payee possible values are S,R
+        schema:
+          type: string
+          enum:
+          - S
+          - R
+      - name: is_same_day_delivery
+        in: query
+        description: is same day delivery possible values are 1,0
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+      - name: Deliver_On
+        in: query
+        description: Order Deliver DateTime Format will be 2020-06-24
+        schema:
+          type: string
+          format: date
+      - name: product_items
+        in: query
+        description: 'Product Items in JSON format. Required format: [{"externalProductCode":"xxx","qty":2,"unitPrice":10}] or [{"product_name":"xxx","qty":2,"product_base_price":10}]'
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Order Create With Merchant
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

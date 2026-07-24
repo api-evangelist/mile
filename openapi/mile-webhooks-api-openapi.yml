@@ -1,0 +1,135 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Webhooks API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Webhooks
+paths:
+  /api/v1/partners/webhook/inventory/transfer/configure:
+    post:
+      tags:
+      - Webhooks
+      summary: Configure webhook settings for loadout pallet push notifications
+      description: This endpoint allows you to configure webhook URL and authentication for receiving loadout notifications
+      operationId: post_app_apiv1_trackingapi_configurewebhook
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: webhook_url
+        in: query
+        description: Webhook URL to receive loadout notifications
+        required: true
+        schema:
+          type: string
+      - name: access_token_webhook
+        in: query
+        description: Bearer token for webhook authentication (optional)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Webhook configuration saved successfully
+  /api/v1/partners/webhook/loadout/test:
+    post:
+      tags:
+      - Webhooks
+      summary: Test loadout webhook endpoint connectivity
+      description: This endpoint sends a test payload to your configured webhook URL to verify connectivity
+      operationId: post_app_apiv1_trackingapi_testloadoutwebhook
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: webhook_url
+        in: query
+        description: 'Optional: Webhook URL to test (if not provided, uses configured URL)'
+        schema:
+          type: string
+      - name: access_token_webhook
+        in: query
+        description: 'Optional: Bearer token for webhook authentication'
+        schema:
+          type: string
+      - name: loadout_id
+        in: query
+        description: 'Optional: Loadout ID to use real data for testing (if not provided, uses sample data)'
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Test loadout webhook sent successfully
+  /api/v1/partners/webhook/info:
+    get:
+      tags:
+      - Webhooks
+      summary: Get current webhook configuration
+      description: This endpoint returns the current webhook configuration for loadout notifications
+      operationId: get_app_apiv1_trackingapi_getwebhookinfo
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns webhook configuration
+  /api/v1/partners/webhook/test:
+    post:
+      tags:
+      - Webhooks
+      summary: Test Webhook for Order Status Updates
+      description: This endpoint sends DUMMY/SAMPLE JSON data to your webhook URL for testing purposes. No real order data is used.
+      operationId: post_app_apiv1_trackingapi_testwebhook
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: webhook_url
+        in: query
+        description: Your webhook URL (optional - for testing)
+        schema:
+          type: string
+      - name: event_type
+        in: query
+        description: Event type to test (order_created, settlement_report)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns sample webhook payload for order status updates
+  /api/v1/partners/webhook/list:
+    get:
+      tags:
+      - Webhooks
+      summary: List All Webhooks for Company
+      description: This endpoint returns all configured webhooks for the company
+      operationId: get_app_apiv1_trackingapi_listwebhooks
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns list of all configured webhooks
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

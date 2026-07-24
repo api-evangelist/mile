@@ -1,0 +1,616 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Order API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Order
+paths:
+  /api/v1/partners/order/item/return:
+    post:
+      tags:
+      - Order
+      summary: Return order items
+      description: This call returns order items
+      operationId: post_app_apiv1_trackingapi_returnorderitem
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: order_id
+        in: query
+        description: Order id
+        schema:
+          type: integer
+      - name: return_latitude
+        in: query
+        description: Return Latitude
+        schema:
+          type: number
+      - name: return_longitude
+        in: query
+        description: Return Longitude
+        schema:
+          type: number
+      - name: return_address
+        in: query
+        description: Return Address
+        schema:
+          type: string
+      - name: items
+        in: query
+        description: Order Items format should be in json like [{"product_id":23,"quantity":1}]
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns Order Items
+  /api/v1/partners/track/order:
+    get:
+      tags:
+      - Order
+      summary: Takes tracking_no and returns the order status
+      description: This call Takes tracking_no and returns the order status
+      operationId: get_app_apiv1_trackingapi_trackorder
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: tracking_no
+        in: query
+        description: The field is depreciated. Please use tracking_nos
+        schema:
+          type: string
+      - name: tracking_nos
+        in: query
+        description: The field is required. Max 50 tracking nos are allowed
+        schema:
+          type: array
+          items:
+            type: string
+      - name: date_from
+        in: query
+        description: The field is optional
+        schema:
+          type: string
+      - name: date_to
+        in: query
+        description: The field is optional
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns the order status
+    post:
+      tags:
+      - Order
+      summary: Takes tracking_no and returns the order status
+      description: This call Takes tracking_no and returns the order status
+      operationId: post_app_apiv1_trackingapi_trackorder
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: tracking_no
+        in: query
+        description: The field is depreciated. Please use tracking_nos
+        schema:
+          type: string
+      - name: tracking_nos
+        in: query
+        description: The field is required. Max 50 tracking nos are allowed
+        schema:
+          type: array
+          items:
+            type: string
+      - name: date_from
+        in: query
+        description: The field is optional
+        schema:
+          type: string
+      - name: date_to
+        in: query
+        description: The field is optional
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns the order status
+  /api/v1/partners/order/import:
+    post:
+      tags:
+      - Order
+      summary: Import Order.
+      description: This call imports orders with all required details
+      operationId: post_app_apiv1_trackingapi_createordernew
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: tracking_no
+        in: query
+        description: Tracking no
+        schema:
+          type: string
+      - name: reference_id
+        in: query
+        description: Reference id
+        schema:
+          type: string
+      - name: agent
+        in: query
+        description: Agent Name
+        schema:
+          type: string
+      - name: merchant_name
+        in: query
+        description: Merchant Id/Name
+        schema:
+          type: string
+      - name: customer
+        in: query
+        description: Customer Name
+        schema:
+          type: string
+      - name: contact_person
+        in: query
+        description: Contact Person Name
+        schema:
+          type: string
+      - name: phone
+        in: query
+        description: Customer phone
+        schema:
+          type: string
+      - name: city
+        in: query
+        description: City
+        schema:
+          type: string
+      - name: customer_address
+        in: query
+        description: Customer Address
+        schema:
+          type: string
+      - name: description
+        in: query
+        description: Order Description
+        schema:
+          type: string
+      - name: Deliver_On
+        in: query
+        description: Order Deliver DateTime Format will be 2020-06-24
+        schema:
+          type: string
+      - name: product_items
+        in: query
+        description: 'Product Items in json format e.g [{"productName": "Green Coffee","qty": 2,"unitPrice": 10}]'
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Import Order
+  /api/v1/partners/order/create:
+    post:
+      tags:
+      - Order
+      summary: Create Order Optional Merchant Id
+      operationId: post_app_apiv1_trackingapi_createorderwithoutmerchant
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token (Required)
+        schema:
+          type: string
+      - name: tracking_no
+        in: query
+        description: Tracking no (Optional)
+        schema:
+          type: string
+      - name: reference_id
+        in: query
+        description: Reference id (Optional)
+        schema:
+          type: string
+      - name: agent
+        in: query
+        description: Agent Name (Optional)
+        schema:
+          type: string
+      - name: merchant_name
+        in: query
+        description: Merchant Id/Name (Optional)
+        schema:
+          type: string
+      - name: merchant_location_id
+        in: query
+        description: Branch/Merchant Location Id (Optional)
+        schema:
+          type: integer
+      - name: customer
+        in: query
+        description: Customer Name (Required)
+        schema:
+          type: string
+      - name: contact_person
+        in: query
+        description: Contact Person Name (Optional)
+        schema:
+          type: string
+      - name: phone
+        in: query
+        description: Customer phone (Required)
+        schema:
+          type: string
+      - name: city
+        in: query
+        description: City (Required)
+        schema:
+          type: string
+      - name: customer_address
+        in: query
+        description: Customer Address (Required if lat, long not provided)
+        schema:
+          type: string
+      - name: customer_address_lat
+        in: query
+        description: Customer Latitude (Optional)
+        schema:
+          type: number
+      - name: customer_address_lon
+        in: query
+        description: Customer Longitude (Optional)
+        schema:
+          type: number
+      - name: is_pickup
+        in: query
+        description: is Pickup possible values are 1,0 (Required)
+        schema:
+          type: integer
+      - name: pickup_address
+        in: query
+        description: Pickup Address (Required if is_pickup=1)
+        schema:
+          type: string
+      - name: pickup_address_lat
+        in: query
+        description: Pickup Latitude (Optional)
+        schema:
+          type: number
+      - name: pickup_address_lon
+        in: query
+        description: Pickup Longitude (Optional)
+        schema:
+          type: number
+      - name: receiver_address
+        in: query
+        description: Receiver Address (Required if is_pickup=1)
+        schema:
+          type: string
+      - name: receiver_address_lat
+        in: query
+        description: Receiver Latitude (Optional)
+        schema:
+          type: number
+      - name: receiver_address_lon
+        in: query
+        description: Receiver Longitude (Optional)
+        schema:
+          type: number
+      - name: receiver_name
+        in: query
+        description: Receiver Name (Required if is_pickup=1)
+        schema:
+          type: string
+      - name: external_customer_code
+        in: query
+        description: Add Customer code if you make new customer or you enter the route id.
+        schema:
+          type: string
+      - name: area
+        in: query
+        description: Add area
+        schema:
+          type: string
+      - name: block
+        in: query
+        description: Add block
+        schema:
+          type: string
+      - name: address_id
+        in: query
+        description: Add address Id if you make new customer
+        schema:
+          type: string
+      - name: receiver_phone
+        in: query
+        description: Receiver Phone (Required if is_pickup=1)
+        schema:
+          type: string
+      - name: receiver_postcode
+        in: query
+        description: Receiver Postcode (Optional)
+        schema:
+          type: string
+      - name: receiver_city
+        in: query
+        description: Receiver city (Optional)
+        schema:
+          type: string
+      - name: cod
+        in: query
+        description: Cash on Delivery Amount (Optional)
+        schema:
+          type: number
+      - name: total_amount
+        in: query
+        description: Total Amount (Optional)
+        schema:
+          type: number
+      - name: description
+        in: query
+        description: Order Description/Notes for Driver (Optional)
+        schema:
+          type: string
+      - name: payee
+        in: query
+        description: Payee possible values are S,R (Required) S means sender will pay and R means Receiver will pay
+        schema:
+          type: string
+          enum:
+          - S
+          - R
+      - name: is_same_day_delivery
+        in: query
+        description: is same day delivery possible values are 1,0 (Required)
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+      - name: is_foc
+        in: query
+        description: is free of charge possible values are 1,0 (Required)
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+      - name: deliver_on
+        in: query
+        description: Order Deliver DateTime Format will be 2020-06-24 (Required)
+        schema:
+          type: string
+          format: date
+      - name: deliver_on_time_from
+        in: query
+        description: Order Deliver Time From Format will be hh:mm (24 hours)
+        schema:
+          type: string
+      - name: deliver_on_time_to
+        in: query
+        description: Order Deliver Time To Format will be hh:mm (24 hours)
+        schema:
+          type: string
+      - name: deliver_on_time_from_utc
+        in: query
+        description: Order Deliver Time From Format will be UTC
+        schema:
+          type: string
+      - name: deliver_on_time_to_utc
+        in: query
+        description: Order Deliver Time To Format will be UTC
+        schema:
+          type: string
+      - name: pickup_datetime_from
+        in: query
+        description: Order Pickup Date Time From Format will be 2021-12-25 hh:mm (24 hours)
+        schema:
+          type: string
+      - name: pickup_datetime_to
+        in: query
+        description: Order Pickup Date Time To Format will be 2021-12-25 hh:mm (24 hours)
+        schema:
+          type: string
+      - name: payment_term_id
+        in: query
+        description: Use Payment term api to get payment term id.
+        schema:
+          type: integer
+      - name: route_id
+        in: query
+        description: Use routes api to get route id.
+        schema:
+          type: integer
+      - name: is_update
+        in: query
+        description: is Update possible values are 1,0. If value is 1 then tracking_no will be mandatory
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+      - name: product_items
+        in: query
+        description: 'Product Items in JSON format. Required format: [{"externalProductCode":"xxx","qty":2,"unitPrice":10}] or [{"product_name":"xxx","qty":2,"product_base_price":10,"product_tax":5}]'
+        schema:
+          type: string
+      - name: address_id
+        in: query
+        description: customer address ID
+        schema:
+          type: string
+      - name: customer_group_id
+        in: query
+        description: Customer Group ID (Optional) 1:Direct, 2:Indirect
+        schema:
+          type: integer
+      - name: is_prepaid
+        in: query
+        description: is Prepaid possible values are 1,0
+        schema:
+          type: integer
+      - name: customer_type_id
+        in: query
+        description: "Customer Type:\n        1 = Individual Customer,\n        2 = Corporate Customer,\n        3 = Watchman,\n        4 = Supermarket,\n        5 = Abraaj FOC,\n        6 = Co-Packing,\n        7 = Co-operatives,\n        9 = E-commerce,\n        10 = Horeca,\n        12 = Mabara,\n        13 = Modern Trade,\n        14 = Mosques,\n        15 = Staff account"
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Returns order object with id, trackingNo, referenceId, createdBy, locality, customer, pickupAddress, receiverAddress, items
+  /api/v1/partners/cancel/order:
+    post:
+      tags:
+      - Order
+      summary: Cancel/delete the Order
+      description: This call cancel/delete the Order
+      operationId: post_app_apiv1_trackingapi_cancelorderapi
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: tracking_no
+        in: query
+        description: Order tracking number (Optional if provided then order will be deleted)
+        schema:
+          type: string
+      - name: order_id
+        in: query
+        description: System order id
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Cancel/Delete the Order
+  /api/v1/partners/order/edit:
+    post:
+      tags:
+      - Order
+      summary: Edit Order
+      description: This call edits an existing order
+      operationId: post_app_apiv1_trackingapi_editorder
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: order_id
+        in: query
+        description: Order ID
+        schema:
+          type: integer
+      - name: tracking_no
+        in: query
+        description: Tracking Number (alternative to order_id)
+        schema:
+          type: string
+      - name: reference_id
+        in: query
+        description: Reference ID
+        schema:
+          type: string
+      - name: customer_name
+        in: query
+        description: Customer Name
+        schema:
+          type: string
+      - name: customer_phone
+        in: query
+        description: Customer Phone
+        schema:
+          type: string
+      - name: customer_address
+        in: query
+        description: Customer Address
+        schema:
+          type: string
+      - name: customer_address_lat
+        in: query
+        description: Customer Latitude
+        schema:
+          type: number
+      - name: customer_address_lon
+        in: query
+        description: Customer Longitude
+        schema:
+          type: number
+      - name: pickup_latitude
+        in: query
+        description: Pickup Latitude
+        schema:
+          type: number
+      - name: pickup_longitude
+        in: query
+        description: Pickup Longitude
+        schema:
+          type: number
+      - name: receiver_name
+        in: query
+        description: Receiver Name
+        schema:
+          type: string
+      - name: receiver_phone
+        in: query
+        description: Receiver Phone
+        schema:
+          type: string
+      - name: receiver_address
+        in: query
+        description: Receiver Address
+        schema:
+          type: string
+      - name: receiver_latitude
+        in: query
+        description: Receiver Latitude
+        schema:
+          type: number
+      - name: receiver_longitude
+        in: query
+        description: Receiver Longitude
+        schema:
+          type: number
+      - name: cod
+        in: query
+        description: Cash on Delivery Amount
+        schema:
+          type: number
+      - name: description
+        in: query
+        description: Order Description
+        schema:
+          type: string
+      - name: deliver_on
+        in: query
+        description: 'Delivery Date (Format: YYYY-MM-DD)'
+        schema:
+          type: string
+      - name: product_items
+        in: query
+        description: 'Product Items in JSON format. Required format: [{"externalProductCode":"xxx","qty":2,"unitPrice":10,"weight":1.5}] or [{"product_name":"xxx","qty":2,"product_base_price":10,"product_tax":5,"weight":1.5,"category_name":"Category","brand_name":"Brand","product_sku":"SKU123"}]'
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns the updated order
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

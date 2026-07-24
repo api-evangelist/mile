@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Settlement Webhook API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Settlement Webhook
+paths:
+  /api/v1/partners/settlement-webhook/configure:
+    post:
+      tags:
+      - Settlement Webhook
+      summary: Configure Settlement Report Webhook
+      description: Configure webhook to automatically send settlement report orders to external platform
+      operationId: post_app_apiv1_trackingapi_configuresettlementwebhook
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: webhook_url
+        in: query
+        description: External platform webhook URL to receive settlement orders
+        required: true
+        schema:
+          type: string
+      - name: enabled
+        in: query
+        description: Enable/disable settlement webhook (1=enabled, 0=disabled)
+        schema:
+          type: integer
+          default: 1
+      responses:
+        '200':
+          description: Settlement webhook configured successfully
+  /api/v1/partners/settlement-webhook/test:
+    post:
+      tags:
+      - Settlement Webhook
+      summary: Test Settlement Webhook Webhook
+      description: Send test settlement data to configured webhook URL
+      operationId: post_app_apiv1_trackingapi_testsettlementwebhook
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: webhook_url
+        in: query
+        description: Your webhook URL (optional - for testing)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns sample settlement webhook payload
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

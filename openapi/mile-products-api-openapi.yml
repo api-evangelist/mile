@@ -1,0 +1,422 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Products API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Products
+paths:
+  /api/v1/partners/products:
+    get:
+      tags:
+      - Products
+      summary: Returns all shipment products
+      description: This call Returns all shipment products
+      operationId: get_app_apiv1_trackingapi_getallpartnerproducts
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: external_product_code
+        in: query
+        description: This is optional. If you pass external_product_code then only that product to this will return
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns all shipment products
+  /api/v1/partners/categories-brands:
+    get:
+      tags:
+      - Products
+      summary: Returns all brands and categories
+      description: This call Returns all brands and categories
+      operationId: get_app_apiv1_trackingapi_getallpartnercategoriesbrands
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns all brands and categories
+  /api/v1/partners/brand/category/create:
+    post:
+      tags:
+      - Products
+      summary: This call will create brand and category
+      description: This call will create brand and category
+      operationId: post_app_apiv1_trackingapi_createbrandandcategory
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: brand_name
+        in: query
+        description: Brand Name
+        schema:
+          type: string
+      - name: category_name
+        in: query
+        description: Category Name
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns the created brand and category
+  /api/v1/partners/product/create:
+    post:
+      tags:
+      - Products
+      summary: This call will create product
+      description: This call will create product
+      operationId: post_app_apiv1_trackingapi_createproduct
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: name
+        in: query
+        description: Product Name
+        schema:
+          type: string
+      - name: sku
+        in: query
+        description: Product SKU
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        description: Category Id
+        schema:
+          type: integer
+      - name: brand_id
+        in: query
+        description: Brand Id
+        schema:
+          type: integer
+      - name: in_stock
+        in: query
+        description: In Stock
+        schema:
+          type: integer
+      - name: volume
+        in: query
+        description: Volume(cubic meter)
+        schema:
+          type: number
+      - name: weight
+        in: query
+        description: Weight (kg)
+        schema:
+          type: number
+      - name: description
+        in: query
+        description: Product description
+        schema:
+          type: string
+      - name: base_price
+        in: query
+        description: Product Base Price
+        schema:
+          type: number
+      - name: pallet_size
+        in: query
+        description: Product Pallet Size
+        schema:
+          type: number
+      - name: bar_code
+        in: query
+        description: Product Bar Code
+        schema:
+          type: string
+      - name: is_active
+        in: query
+        description: Product Active Status
+        schema:
+          type: boolean
+      - name: tax_percentage
+        in: query
+        description: Tax Percentage
+        schema:
+          type: number
+      - name: external_item_code
+        in: query
+        description: External Item Code
+        schema:
+          type: string
+      - name: promotion_amount
+        in: query
+        description: Promotion Amount (Optional)
+        schema:
+          type: number
+      - name: promotion_code
+        in: query
+        description: Promotion Code (Optional)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns the created product
+  /api/v1/partners/product/brand-category/create:
+    post:
+      tags:
+      - Products
+      summary: This call will create product without brand and category Ids
+      description: This call will create product
+      operationId: post_app_apiv1_trackingapi_createproductwithoutbrandandcategoryid
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: name
+        in: query
+        description: Product Name
+        schema:
+          type: string
+      - name: sku
+        in: query
+        description: Product SKU
+        schema:
+          type: string
+      - name: category_name
+        in: query
+        description: Category Name
+        schema:
+          type: string
+      - name: brand_name
+        in: query
+        description: Brand Name
+        schema:
+          type: string
+      - name: in_stock
+        in: query
+        description: In Stock
+        schema:
+          type: integer
+      - name: volume
+        in: query
+        description: Volume(cubic meter)
+        schema:
+          type: number
+      - name: weight
+        in: query
+        description: Weight (kg)
+        schema:
+          type: number
+      - name: description
+        in: query
+        description: Product description
+        schema:
+          type: string
+      - name: base_price
+        in: query
+        description: Product Base Price
+        schema:
+          type: number
+      - name: bar_code
+        in: query
+        description: Product Bar Code
+        schema:
+          type: string
+      - name: tax_percentage
+        in: query
+        description: Tax Percentage
+        schema:
+          type: number
+      - name: external_item_code
+        in: query
+        description: External Item Code
+        schema:
+          type: string
+      - name: external_id
+        in: query
+        description: External Id
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns the created product
+  /api/v1/partners/product/edit:
+    post:
+      tags:
+      - Products
+      summary: This call will edit product
+      description: This call will edit product
+      operationId: post_app_apiv1_trackingapi_editproduct
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: id
+        in: query
+        description: Product Id
+        schema:
+          type: integer
+      - name: name
+        in: query
+        description: Product Name
+        schema:
+          type: string
+      - name: sku
+        in: query
+        description: Product SKU
+        schema:
+          type: string
+      - name: category_name
+        in: query
+        description: Category Name
+        schema:
+          type: string
+      - name: brand_name
+        in: query
+        description: Brand Name
+        schema:
+          type: string
+      - name: in_stock
+        in: query
+        description: In Stock
+        schema:
+          type: integer
+      - name: volume
+        in: query
+        description: Volume(cubic meter)
+        schema:
+          type: number
+      - name: weight
+        in: query
+        description: Weight (kg)
+        schema:
+          type: number
+      - name: pallet_size
+        in: query
+        description: Pallet Size
+        schema:
+          type: number
+      - name: description
+        in: query
+        description: Product description
+        schema:
+          type: string
+      - name: base_price
+        in: query
+        description: Product Base Price
+        schema:
+          type: number
+      - name: is_active
+        in: query
+        description: Product Active Status
+        schema:
+          type: boolean
+      - name: bar_code
+        in: query
+        description: Product Bar Code
+        schema:
+          type: string
+      - name: tax_percentage
+        in: query
+        description: Tax Percentage
+        schema:
+          type: number
+      - name: external_item_code
+        in: query
+        description: External Item Code
+        schema:
+          type: string
+      - name: external_id
+        in: query
+        description: External Id
+        schema:
+          type: string
+      - name: promotion_amount
+        in: query
+        description: Promotion Amount (Optional)
+        schema:
+          type: number
+      - name: promotion_code
+        in: query
+        description: Promotion Code (Optional)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns the updated product
+  /api/v1/partners/brand/edit:
+    post:
+      tags:
+      - Products
+      summary: Edit Brand
+      description: This call edits an existing brand
+      operationId: post_app_apiv1_trackingapi_editbrand
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: id
+        in: query
+        description: Brand ID
+        schema:
+          type: integer
+      - name: brand_name
+        in: query
+        description: Brand Name
+        schema:
+          type: string
+      - name: category_id
+        in: query
+        description: Category ID
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Returns the updated brand
+  /api/v1/partners/category/edit:
+    post:
+      tags:
+      - Products
+      summary: Edit Category
+      description: This call edits an existing category
+      operationId: post_app_apiv1_trackingapi_editcategory
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: id
+        in: query
+        description: Category ID
+        schema:
+          type: integer
+      - name: category_name
+        in: query
+        description: Category Name
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns the updated category
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

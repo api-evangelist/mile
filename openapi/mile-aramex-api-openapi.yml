@@ -1,0 +1,97 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Aramex
+paths:
+  /api/v1/partners/aramex/order:
+    post:
+      tags:
+      - Aramex
+      summary: Create Aramex shipment
+      description: This call creates a shipment on aramex
+      operationId: post_app_apiv1_trackingapi_aramexshipment
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Create aramex Order
+  /api/v1/partners/aramex/quote:
+    get:
+      tags:
+      - Aramex
+      summary: Aramex get rate
+      description: This call gets rate from aramex
+      operationId: get_app_apiv1_trackingapi_aramexquote
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Get aramex rate
+    post:
+      tags:
+      - Aramex
+      summary: Aramex get rate
+      description: This call gets rate from aramex
+      operationId: post_app_apiv1_trackingapi_aramexquote
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Get aramex rate
+  /api/v1/partners/aramex/trackshipments:
+    get:
+      tags:
+      - Aramex
+      summary: Aramex Track Shipments
+      description: This call gets rate from aramex
+      operationId: get_app_apiv1_trackingapi_aramextrackshipments
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Get Track Shipments
+    post:
+      tags:
+      - Aramex
+      summary: Aramex Track Shipments
+      description: This call gets rate from aramex
+      operationId: post_app_apiv1_trackingapi_aramextrackshipments
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Get Track Shipments
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

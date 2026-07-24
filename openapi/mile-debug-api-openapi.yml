@@ -1,0 +1,50 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Debug API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Debug
+paths:
+  /api/v1/partners/debug/auth:
+    get:
+      tags:
+      - Debug
+      summary: Debug Authentication - Check Access Token
+      description: This endpoint helps debug authentication issues by showing what token data is received
+      operationId: get_app_apiv1_trackingapi_debugauth
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns authentication debug information
+    post:
+      tags:
+      - Debug
+      summary: Debug Authentication - Check Access Token
+      description: This endpoint helps debug authentication issues by showing what token data is received
+      operationId: post_app_apiv1_trackingapi_debugauth
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns authentication debug information
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

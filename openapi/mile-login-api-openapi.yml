@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Login API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Login
+paths:
+  /api/v1/partners/ping/api:
+    get:
+      tags:
+      - Login
+      summary: Returns the server is active or not
+      description: This call returns the server is active or not
+      operationId: get_app_apiv1_trackingapi_pingapi
+      responses:
+        '200':
+          description: Returns the server is active or not
+  /api/v1/partners/login:
+    post:
+      tags:
+      - Login
+      summary: Takes username and password and returns the access token.
+      description: This call takes username and password and returns the access token
+      operationId: post_app_apiv1_trackingapi_index
+      parameters:
+      - name: user
+        in: query
+        description: The field used to get username
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: query
+        description: The field used to get password
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns the access_token of an user
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

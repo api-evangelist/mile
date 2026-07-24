@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Payment Terms API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Payment Terms
+paths:
+  /api/v1/partners/payment/terms:
+    get:
+      tags:
+      - Payment Terms
+      summary: Get all payment terms for the authenticated user's company
+      description: This call returns all payment terms available for the company
+      operationId: get_app_apiv1_trackingapi_getpaymentterms
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns all payment terms for the company
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

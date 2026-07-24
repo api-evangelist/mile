@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Routes API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Routes
+paths:
+  /api/v1/partners/routes:
+    get:
+      tags:
+      - Routes
+      summary: Get all routes for the company
+      description: This call returns all routes associated with the authenticated company
+      operationId: get_app_apiv1_trackingapi_getallroutes
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns all routes for the company
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

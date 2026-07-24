@@ -1,0 +1,141 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Warehouse Inbound Orders API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Warehouse Inbound Orders
+paths:
+  /api/v1/partners/inbound/create:
+    post:
+      tags:
+      - Warehouse Inbound Orders
+      summary: Create Warehouse Inbound Order via API
+      operationId: post_app_apiv1_trackingapi_createwarehouseinboundorder
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token (Required)
+        schema:
+          type: string
+      - name: receiver_name
+        in: query
+        description: Receiver Name (Required)
+        schema:
+          type: string
+      - name: receiver_contact
+        in: query
+        description: Receiver Phone (Required)
+        schema:
+          type: string
+      - name: receiver_address
+        in: query
+        description: Receiver Address (Required)
+        schema:
+          type: string
+      - name: debtor_merchant_id
+        in: query
+        description: Merchant External ID (Optional)
+        schema:
+          type: string
+      - name: debtor_merchant_name
+        in: query
+        description: Merchant Name (Optional)
+        schema:
+          type: string
+      - name: vendor_ref_id
+        in: query
+        description: Vendor Reference ID (Optional)
+        schema:
+          type: string
+      - name: vendor_name
+        in: query
+        description: Vendor Name (Optional)
+        schema:
+          type: string
+      - name: warehouse_name
+        in: query
+        description: Warehouse Name (Required)
+        schema:
+          type: string
+      - name: loading_date
+        in: query
+        description: 'Loading Date (Required) Format: YYYY-MM-DD'
+        schema:
+          type: string
+          format: date
+      - name: rdd
+        in: query
+        description: 'Required Delivery Date (Required) Format: YYYY-MM-DD'
+        schema:
+          type: string
+          format: date
+      - name: brand_name
+        in: query
+        description: Brand Name (Optional)
+        schema:
+          type: string
+      - name: itinerary
+        in: query
+        description: Route/Itinerary (Optional)
+        schema:
+          type: string
+      - name: transport_no
+        in: query
+        description: Transport Number (Optional)
+        schema:
+          type: string
+      - name: container_code
+        in: query
+        description: Container Code (Optional)
+        schema:
+          type: string
+      - name: agent_code
+        in: query
+        description: Agent Code (Optional)
+        schema:
+          type: string
+      - name: agent_name
+        in: query
+        description: Agent Name (Optional)
+        schema:
+          type: string
+      - name: notes
+        in: query
+        description: Order Notes (Optional)
+        schema:
+          type: string
+      - name: order_code
+        in: query
+        description: Order Code (Optional)
+        schema:
+          type: string
+      - name: reference_no
+        in: query
+        description: Reference Number (Optional)
+        schema:
+          type: string
+      - name: destination_no
+        in: query
+        description: Destination Number (Optional)
+        schema:
+          type: string
+      - name: product_items
+        in: query
+        description: 'Product Items in JSON format. Required format: [{"item_id":"733255","description":"Product Name","quantity":60,"volume":0,"net_weight":0,"gross_weight":0}]'
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns warehouse order object with order_id, order_number, warehouse, receiver, items
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

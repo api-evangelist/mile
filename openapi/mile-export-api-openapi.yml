@@ -1,0 +1,228 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Export API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Export
+paths:
+  /api/v1/partners/orders/update/synced:
+    put:
+      tags:
+      - Export
+      summary: Push the Order To external
+      description: This call will update order synced of order
+      operationId: put_app_apiv1_trackingapi_ordersupdatesyncedapi
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: orderIds
+        in: query
+        description: comma seperated values
+        schema:
+          type: string
+      - name: tracking_nos
+        in: query
+        description: The field is required. Max 50 tracking nos are allowed
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: Update order synced value of order
+    post:
+      tags:
+      - Export
+      summary: Push the Order To external
+      description: This call will update order synced of order
+      operationId: post_app_apiv1_trackingapi_ordersupdatesyncedapi
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: orderIds
+        in: query
+        description: comma seperated values
+        schema:
+          type: string
+      - name: tracking_nos
+        in: query
+        description: The field is required. Max 50 tracking nos are allowed
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: Update order synced value of order
+  /api/v1/partners/orders/pull:
+    get:
+      tags:
+      - Export
+      summary: Push the Order To external
+      description: This call Push the Order To external
+      operationId: get_app_apiv1_trackingapi_pullordersapi
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: date_from
+        in: query
+        description: Date From format like 2020-05-21
+        schema:
+          type: string
+          format: date
+      - name: date_to
+        in: query
+        description: Date To format like 2020-05-21
+        schema:
+          type: string
+          format: date
+      - name: include_synced
+        in: query
+        description: value = 0 means unsynced, value = 1 means synced
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+      responses:
+        '200':
+          description: Get All Orders in date range
+    post:
+      tags:
+      - Export
+      summary: Push the Order To external
+      description: This call Push the Order To external
+      operationId: post_app_apiv1_trackingapi_pullordersapi
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: date_from
+        in: query
+        description: Date From format like 2020-05-21
+        schema:
+          type: string
+          format: date
+      - name: date_to
+        in: query
+        description: Date To format like 2020-05-21
+        schema:
+          type: string
+          format: date
+      - name: include_synced
+        in: query
+        description: value = 0 means unsynced, value = 1 means synced
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+      responses:
+        '200':
+          description: Get All Orders in date range
+  /api/v1/partners/external/push:
+    post:
+      tags:
+      - Export
+      summary: Push the Order To external
+      description: This call Push the Order To external
+      operationId: post_app_apiv1_trackingapi_externalpushapi
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Push the Order To external
+  /api/v1/partners/track/orders/pull:
+    get:
+      tags:
+      - Export
+      operationId: get_app_apiv1_trackingapi_pullorderapi
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: date_from
+        in: query
+        description: Date From format like 2020-05-21
+        schema:
+          type: string
+          format: date
+      - name: date_to
+        in: query
+        description: Date To format like 2020-05-21
+        schema:
+          type: string
+          format: date
+      - name: include_synced
+        in: query
+        description: value = 0 means unsynced, value = 1 means synced
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+      responses:
+        '200':
+          description: Get All Orders in date range
+    post:
+      tags:
+      - Export
+      operationId: post_app_apiv1_trackingapi_pullorderapi
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: date_from
+        in: query
+        description: Date From format like 2020-05-21
+        schema:
+          type: string
+          format: date
+      - name: date_to
+        in: query
+        description: Date To format like 2020-05-21
+        schema:
+          type: string
+          format: date
+      - name: include_synced
+        in: query
+        description: value = 0 means unsynced, value = 1 means synced
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+      responses:
+        '200':
+          description: Get All Orders in date range
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

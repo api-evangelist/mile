@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Vehicles API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Vehicles
+paths:
+  /api/v1/partners/vehicles:
+    get:
+      tags:
+      - Vehicles
+      summary: Returns all vehicles registered for the company
+      description: This call Returns all vehicles with their details including vehicle type, capacity, dimensions, etc.
+      operationId: get_app_apiv1_trackingapi_getcompanyvehicles
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: vehicle_id
+        in: query
+        description: 'Optional: Filter by specific vehicle ID'
+        schema:
+          type: integer
+      - name: vehicle_number
+        in: query
+        description: 'Optional: Filter by vehicle number/plate'
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns all registered vehicles for the company
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer

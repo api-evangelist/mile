@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  title: Api Documentation Aramex Promotion Bundle API
+  description: Api Documentation
+  version: 1.0.0
+servers:
+- url: https://lastmile.milenow.com/index.php
+  description: Api Documentation
+security:
+- Bearer: []
+tags:
+- name: Promotion Bundle
+paths:
+  /api/v1/partners/promotion/bundle/create:
+    post:
+      tags:
+      - Promotion Bundle
+      summary: Create Promotion Bundle with multiple products
+      description: This call creates promotion bundle entries with the same bundle code for multiple products
+      operationId: post_app_apiv1_trackingapi_createpromotionbundle
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: bundle_code
+        in: query
+        description: Bundle Code (Required)
+        required: true
+        schema:
+          type: string
+      - name: bundle_price
+        in: query
+        description: Bundle Price (Required)
+        required: true
+        schema:
+          type: string
+      - name: bundle_name
+        in: query
+        description: Bundle Name (Optional)
+        required: false
+        schema:
+          type: string
+      - name: product_items
+        in: query
+        description: 'Product Items in JSON format. Required format: [{"external_code":"SKU123","product_name":"iPhone 15","quantity":2}]. Either external_code or product_name is required along with quantity.'
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns the created promotion bundle entries
+  /api/v1/partners/promotion/bundle/get:
+    get:
+      tags:
+      - Promotion Bundle
+      summary: Get Promotion Bundle details
+      description: This call retrieves promotion bundle entries by bundle code, name, or search term
+      operationId: get_app_apiv1_trackingapi_getpromotionbundle
+      parameters:
+      - name: access_token
+        in: query
+        description: Access Token
+        schema:
+          type: string
+      - name: bundle_code
+        in: query
+        description: Bundle Code (Optional - use either bundle_code or bundle_name)
+        required: false
+        schema:
+          type: string
+      - name: bundle_name
+        in: query
+        description: Bundle Name (Optional - use either bundle_code or bundle_name)
+        required: false
+        schema:
+          type: string
+      - name: search
+        in: query
+        description: Search term for bundle name (Optional)
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns promotion bundle entries
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      bearerFormat: JWT
+      scheme: bearer
