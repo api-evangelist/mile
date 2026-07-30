@@ -1,8 +1,27 @@
 aid: mile
 name: Mile
-description: Mile is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Mile is an AI-native supply chain execution platform for brands and distributors
+  that own their inventory and fulfill orders directly to customers. It unifies Order Management
+  (OMS), Warehouse Management (WMS), and Transportation / last-mile delivery (TMS) in a single
+  system, with MAC, an AI agent that acts on exceptions rather than only flagging them. Mile
+  exposes a partner REST API at lastmile.milenow.com covering orders, customers, products,
+  categories and brands, promotion bundles, routes, drivers, vehicles, warehouse inbound
+  orders, Aramex shipping, order optimization, and configurable webhooks for order-status,
+  order-creation, settlement, and inventory-transfer events.
 url: https://raw.githubusercontent.com/api-evangelist/mile/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.milenow.com/wp-content/uploads/2025/09/Mile-Logo-high-res-1024x1024.avif
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,10 +30,274 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Logistics
+- Supply Chain
+- Last Mile Delivery
+- Order Management
+- Warehouse Management
+- Transportation Management
+- Fulfillment
+- Shipping
+- Webhooks
+- Route Optimization
+apis:
+- aid: mile:mile-aramex-api
+  name: Mile Aramex API
+  description: The Aramex API from Mile — 3 operation(s) for aramex.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Aramex
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-aramex-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-customers-api
+  name: Mile Customers API
+  description: The Customers API from Mile — 2 operation(s) for customers.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-customers-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-debug-api
+  name: Mile Debug API
+  description: The Debug API from Mile — 1 operation(s) for debug.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Debug
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-debug-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-drivers-api
+  name: Mile Drivers API
+  description: The Drivers API from Mile — 1 operation(s) for drivers.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Drivers
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-drivers-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-export-api
+  name: Mile Export API
+  description: The Export API from Mile — 4 operation(s) for export.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Export
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-export-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-login-api
+  name: Mile Login API
+  description: The Login API from Mile — 2 operation(s) for login.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Login
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-login-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-order-api
+  name: Mile Order API
+  description: The Order API from Mile — 6 operation(s) for order.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Order
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-order-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-order-optimization-api
+  name: Mile Order Optimization API
+  description: The Order Optimization API from Mile — 1 operation(s) for order optimization.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Order Optimization
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-order-optimization-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-order-webhook-api
+  name: Mile Order Webhook API
+  description: The Order Webhook API from Mile — 3 operation(s) for order webhook.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Order Webhook
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-order-webhook-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-order-with-dynamic-merchant-api
+  name: Mile Order With Dynamic Merchant API
+  description: >-
+    The Order With Dynamic Merchant API from Mile — 1 operation(s) for order with dynamic merchant.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Order With Dynamic Merchant
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-order-with-dynamic-merchant-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-payment-terms-api
+  name: Mile Payment Terms API
+  description: The Payment Terms API from Mile — 1 operation(s) for payment terms.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Payment Terms
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-payment-terms-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-products-api
+  name: Mile Products API
+  description: The Products API from Mile — 8 operation(s) for products.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-products-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-promotion-bundle-api
+  name: Mile Promotion Bundle API
+  description: The Promotion Bundle API from Mile — 2 operation(s) for promotion bundle.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Promotion Bundle
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-promotion-bundle-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-routes-api
+  name: Mile Routes API
+  description: The Routes API from Mile — 1 operation(s) for routes.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Routes
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-routes-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-settlement-webhook-api
+  name: Mile Settlement Webhook API
+  description: The Settlement Webhook API from Mile — 2 operation(s) for settlement webhook.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Settlement Webhook
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-settlement-webhook-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-vehicles-api
+  name: Mile Vehicles API
+  description: The Vehicles API from Mile — 1 operation(s) for vehicles.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Vehicles
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-vehicles-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-warehouse-inbound-orders-api
+  name: Mile Warehouse Inbound Orders API
+  description: >-
+    The Warehouse Inbound Orders API from Mile — 1 operation(s) for warehouse inbound orders.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Warehouse Inbound Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-warehouse-inbound-orders-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
+- aid: mile:mile-webhooks-api
+  name: Mile Webhooks API
+  description: The Webhooks API from Mile — 5 operation(s) for webhooks.
+  humanURL: https://lastmile.milenow.com/partner/api/doc
+  baseURL: https://lastmile.milenow.com/index.php
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/mile-webhooks-api-openapi.yml
+  - type: Authentication
+    url: authentication/mile-authentication.yml
+  - type: Webhooks
+    url: asyncapi/mile-webhooks.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +306,46 @@ maintainers:
 common:
 - type: Website
   url: https://milenow.com
+- type: DeveloperPortal
+  url: https://lastmile.milenow.com/partner/api/doc
+- type: Documentation
+  url: https://www.milenow.com/en/integration-hub/
+- type: APIReference
+  url: https://lastmile.milenow.com/partner/api/doc
+- type: Blog
+  url: https://www.milenow.com/en/blogpost/
+- type: SignUp
+  url: https://www.milenow.com/en/sign-up/
+- type: Support
+  url: https://www.milenow.com/en/book-demo/
+- type: Pricing
+  url: https://www.milenow.com/en/pricing/
+- type: TermsOfService
+  url: https://www.milenow.com/en/terms-and-conditions/
+- type: Authentication
+  url: authentication/mile-authentication.yml
+- type: Conventions
+  url: conventions/mile-conventions.yml
+- type: Lifecycle
+  url: lifecycle/mile-lifecycle.yml
+- type: Webhooks
+  url: asyncapi/mile-webhooks.yml
+- type: MCPServer
+  url: mcp/mile-mcp.yml
+- type: LLMsTxt
+  url: llms/mile-llms.txt
+- type: Conformance
+  url: conformance/mile-conformance.yml
+- type: DataModel
+  url: data-model/mile-data-model.yml
+- type: DomainSecurity
+  url: security/mile-domain-security.yml
+- type: Overlay
+  url: overlays/mile-partner-api-overlay.yaml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1
