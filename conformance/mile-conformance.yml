@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/mile-partner-api-openapi-original.json
+note: >-
+  Standards conformance derived from the published OpenAPI. Mile publishes no compliance /
+  certification program, so no Compliance pointer is emitted.
+standards:
+- id: openapi-3.0
+  conforms: true
+  evidence: Provider publishes an OpenAPI 3.0.0 definition at lastmile.milenow.com/partner/api/doc.json
+- id: http-bearer-auth
+  conforms: true
+  evidence: components.securitySchemes declares an http bearer (JWT) scheme applied globally
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 security scheme is declared; auth is login-issued token
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Responses declare 200 only; no application/problem+json error schemas
+- id: webhooks
+  conforms: true
+  evidence: Partner-configurable outbound webhooks for order and settlement events
+- id: pagination
+  conforms: false
+  evidence: No pagination parameters or envelope fields declared
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism documented

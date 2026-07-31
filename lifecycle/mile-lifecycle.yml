@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/mile-partner-api-openapi-original.json
+versioning:
+  scheme: uri-path
+  current: v1
+  example: /api/v1/partners/products
+  docs: https://lastmile.milenow.com/partner/api/doc
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No deprecation or Sunset (RFC 8594) policy is published for the Mile Partner API.
+sla:
+  url: null
+status_page: null
+note: >-
+  No public status page, SLA document, or deprecation policy was found for Mile at the time of
+  enrichment; versioning is carried in the URI path (v1).
+deprecated_operations: []

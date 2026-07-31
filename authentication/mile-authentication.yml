@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/mile-partner-api-openapi-original.json
+docs: https://lastmile.milenow.com/partner/api/doc
+summary:
+  types:
+  - http
+  - apiKey
+  api_key_in:
+  - query
+  notes: >-
+    Partners authenticate by POSTing credentials to /api/v1/partners/login (user + password
+    query parameters) which returns an access_token. The OpenAPI declares a global HTTP Bearer
+    (JWT) scheme, and in practice the token is also accepted as an `access_token` query
+    parameter on the partner operations.
+schemes:
+- name: Bearer
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  applied: global
+  sources:
+  - openapi/mile-partner-api-openapi-original.json
+- name: access_token
+  type: apiKey
+  in: query
+  parameter: access_token
+  description: >-
+    Access token issued by POST /api/v1/partners/login, passed as the `access_token` query
+    parameter on partner endpoints (products, orders, customers, webhooks, etc.).
+  sources:
+  - openapi/mile-partner-api-openapi-original.json
+login:
+  operation: post_app_apiv1_trackingapi_index
+  path: /api/v1/partners/login
+  method: POST
+  params: [user, password]
+  returns: access_token

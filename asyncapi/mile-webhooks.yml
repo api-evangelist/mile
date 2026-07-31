@@ -1,0 +1,47 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/mile-partner-api-openapi-original.json
+docs: https://lastmile.milenow.com/partner/api/doc
+type: Webhooks
+summary: >-
+  The Mile Partner API lets partners register and manage outbound webhooks so external systems
+  (ERPs, marketplaces, WMS) receive push notifications for order and settlement events. There
+  is no published AsyncAPI document; this catalog is derived from the webhook-management
+  operations in the OpenAPI.
+management_operations:
+- operationId: post_app_apiv1_trackingapi_configureorderstatuswebhook
+  path: /api/v1/partners/webhook/order-status/configure
+  purpose: Configure Order Status webhook
+- operationId: post_app_apiv1_trackingapi_configureordercreationwebhook
+  path: /api/v1/partners/order-creation/configure
+  purpose: Configure Order Creation webhook
+- operationId: post_app_apiv1_trackingapi_configuresettlementwebhook
+  path: /api/v1/partners/settlement-webhook/configure
+  purpose: Configure Settlement Report webhook
+- operationId: post_app_apiv1_trackingapi_configurewebhook
+  path: /api/v1/partners/webhook/inventory/transfer/configure
+  purpose: Configure inventory-transfer / loadout pallet push notifications
+- operationId: post_app_apiv1_trackingapi_testwebhook
+  path: /api/v1/partners/webhook/test
+  purpose: Test webhook for order status updates
+- operationId: post_app_apiv1_trackingapi_testloadoutwebhook
+  path: /api/v1/partners/webhook/loadout/test
+  purpose: Test loadout webhook endpoint connectivity
+- operationId: post_app_apiv1_trackingapi_testsettlementwebhook
+  path: /api/v1/partners/settlement-webhook/test
+  purpose: Test settlement webhook
+- operationId: get_app_apiv1_trackingapi_getwebhookinfo
+  path: /api/v1/partners/webhook/info
+  purpose: Get current webhook configuration
+- operationId: get_app_apiv1_trackingapi_listwebhooks
+  path: /api/v1/partners/webhook/list
+  purpose: List all webhooks configured for the company
+event_topics:
+- order-status
+- order-creation
+- settlement-report
+- inventory-transfer / loadout
+- send-order (external ERP / platform push)
+notes: >-
+  Webhook delivery is partner-configured (register a receiving URL, then test it). Payload
+  schemas are not published in the OpenAPI, so message schemas are not captured here.

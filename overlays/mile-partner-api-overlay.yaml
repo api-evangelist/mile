@@ -1,0 +1,33 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Mile Partner API
+  version: 1.0.0
+extends: openapi/mile-partner-api-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: mile
+    x-apievangelist-enriched: '2026-07-20'
+    x-api-type: last-mile-logistics
+    contact:
+      name: Mile
+      url: https://milenow.com
+- target: $.info
+  update:
+    description: >-
+      Mile Partner API — token-authenticated REST API for the Mile last-mile / supply-chain
+      execution platform. Authenticate via POST /api/v1/partners/login to obtain an
+      access_token, then manage orders, customers, products, categories/brands, promotion
+      bundles, routes, drivers, vehicles, warehouse inbound orders, Aramex shipments, order
+      optimization, and configurable webhooks (order-status, order-creation, settlement,
+      inventory-transfer).
+- target: $
+  update:
+    x-apievangelist-notes:
+      auth: >-
+        Login returns an access_token accepted as HTTP Bearer (JWT) or as an `access_token`
+        query parameter; see authentication/mile-authentication.yml.
+      webhooks: See asyncapi/mile-webhooks.yml for the webhook catalog.
+      gaps: >-
+        The published spec documents 200 responses only (no 4xx/5xx problem schemas) and
+        declares no request/response component schemas.

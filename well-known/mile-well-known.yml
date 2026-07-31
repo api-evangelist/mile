@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+note: >-
+  Probed the /.well-known/ discovery surface on the Mile website and API hosts. No documents
+  were served (all 404); recorded here for auditability. No WellKnown/SecurityTxt pointer is
+  emitted since nothing was found.
+hosts:
+- host: https://www.milenow.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://lastmile.milenow.com
+  documents:
+  - {path: /.well-known/security.txt, status: not-served}

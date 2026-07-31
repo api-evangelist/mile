@@ -1,0 +1,47 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/mile-partner-api-openapi-original.json
+docs: https://lastmile.milenow.com/partner/api/doc
+summary: >-
+  Cross-cutting request/response conventions for the Mile Partner API, derived from the
+  published OpenAPI and the partner API documentation. The API is a token-authenticated REST
+  surface under /api/v1/partners/ served from https://lastmile.milenow.com/index.php.
+authentication:
+  style: token
+  detail: >-
+    Obtain an access_token via POST /api/v1/partners/login (user + password), then supply it
+    as an `access_token` query parameter (or HTTP Bearer / JWT) on subsequent calls.
+  see: authentication/mile-authentication.yml
+base_path: /api/v1/partners
+server: https://lastmile.milenow.com/index.php
+request:
+  parameter_style: query
+  note: >-
+    Most operations pass parameters (including access_token) as query parameters; write
+    operations use POST with query/form parameters. No request JSON schemas are declared in
+    the published spec.
+idempotency:
+  supported: false
+  note: No idempotency-key header or parameter is documented in the OpenAPI or the API docs.
+pagination:
+  documented: false
+  note: No pagination parameters or envelope fields are declared in the published spec.
+versioning:
+  scheme: uri-path
+  current: v1
+  example: /api/v1/partners/products
+  see: lifecycle/mile-lifecycle.yml
+webhooks:
+  supported: true
+  note: >-
+    Outbound webhooks are configurable via the API for order-status, order-creation,
+    settlement, and inventory-transfer/loadout events; endpoints exist to configure, test,
+    and list webhooks.
+  see: asyncapi/mile-webhooks.yml
+errors:
+  envelope: undocumented
+  note: >-
+    The published OpenAPI documents 200 responses only; no 4xx/5xx problem schemas are
+    declared, so no error catalog is derivable from the spec.
+rate_limiting:
+  documented: false

@@ -1,0 +1,3628 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api Documentation",
+        "description": "Api Documentation",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://lastmile.milenow.com/index.php",
+            "description": "Api Documentation"
+        }
+    ],
+    "paths": {
+        "/api/v1/partners/ping/api": {
+            "get": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Returns the server is active or not",
+                "description": "This call returns the server is active or not",
+                "operationId": "get_app_apiv1_trackingapi_pingapi",
+                "responses": {
+                    "200": {
+                        "description": "Returns the server is active or not"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Takes username and password and returns the access token.",
+                "description": "This call takes username and password and returns the access token",
+                "operationId": "post_app_apiv1_trackingapi_index",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "description": "The field used to get username",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "The field used to get password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the access_token of an user"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/products": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Returns all shipment products",
+                "description": "This call Returns all shipment products",
+                "operationId": "get_app_apiv1_trackingapi_getallpartnerproducts",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "external_product_code",
+                        "in": "query",
+                        "description": "This is optional. If you pass external_product_code then only that product to this will return",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns all shipment products"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/create/customer": {
+            "post": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Create or update customer",
+                "description": "This call Create or update customer based on is_update parameter",
+                "operationId": "post_app_apiv1_trackingapi_createcustomer",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "is_update",
+                        "in": "query",
+                        "description": "Set to 1 for update existing customer, 0 for create new customer. Default is 0",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "query",
+                        "description": "Customer ID (required when is_update=1)",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "customer_name",
+                        "in": "query",
+                        "description": "Customer Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_phone",
+                        "in": "query",
+                        "description": "Customer Phone",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "is_receiver",
+                        "in": "query",
+                        "description": "Is Receiver (1 or 0)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_home_address",
+                        "in": "query",
+                        "description": "Customer Home Address",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_home_latitude",
+                        "in": "query",
+                        "description": "Customer Home Latitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "customer_home_longitude",
+                        "in": "query",
+                        "description": "Customer Home Longitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "customer_work_address",
+                        "in": "query",
+                        "description": "Customer Work Address",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_work_latitude",
+                        "in": "query",
+                        "description": "Customer Work Latitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "customer_work_longitude",
+                        "in": "query",
+                        "description": "Customer Work Longitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "customer_default_address",
+                        "in": "query",
+                        "description": "possible values are home,work. Default value is home",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "block",
+                        "in": "query",
+                        "description": "Customer Block",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "area",
+                        "in": "query",
+                        "description": "Customer Area",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "street",
+                        "in": "query",
+                        "description": "Customer Street",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "building",
+                        "in": "query",
+                        "description": "Customer Building",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "floor",
+                        "in": "query",
+                        "description": "Customer Floor",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "apartment",
+                        "in": "query",
+                        "description": "Customer Apartment",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "external_customer_code",
+                        "in": "query",
+                        "description": "External Customer Code/Id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "address_id",
+                        "in": "query",
+                        "description": "Address Id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_group_id",
+                        "in": "query",
+                        "description": "Customer Group ID (Optional) 1:Direct, 2:Indirect",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "route_id",
+                        "in": "query",
+                        "description": "Route ID (Optional) - Highest priority for route assignment. If provided, customer will be assigned to this route by ID",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "route_name",
+                        "in": "query",
+                        "description": "Route Name (Optional) - Second priority. If route_id not provided, customer will be assigned to this route by name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "parent_id",
+                        "in": "query",
+                        "description": "Parent Customer ID (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "parent_customer_code",
+                        "in": "query",
+                        "description": "Parent Customer Code (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "parent_address_id",
+                        "in": "query",
+                        "description": "Parent Address Id (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_type_id",
+                        "in": "query",
+                        "description": "Customer Type:\n        1 = Individual Customer,\n        2 = Corporate Customer,\n        3 = Watchman,\n        4 = Supermarket,\n        5 = Abraaj FOC,\n        6 = Co-Packing,\n        7 = Co-operatives,\n        9 = E-commerce,\n        10 = Horeca,\n        12 = Mabara,\n        13 = Modern Trade,\n        14 = Mosques,\n        15 = Staff account",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the customer object"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/order/item/return": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Return order items",
+                "description": "This call returns order items",
+                "operationId": "post_app_apiv1_trackingapi_returnorderitem",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "order_id",
+                        "in": "query",
+                        "description": "Order id",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "return_latitude",
+                        "in": "query",
+                        "description": "Return Latitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "return_longitude",
+                        "in": "query",
+                        "description": "Return Longitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "return_address",
+                        "in": "query",
+                        "description": "Return Address",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "items",
+                        "in": "query",
+                        "description": "Order Items format should be in json like [{\"product_id\":23,\"quantity\":1}]",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns Order Items"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/track/order": {
+            "get": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Takes tracking_no and returns the order status",
+                "description": "This call Takes tracking_no and returns the order status",
+                "operationId": "get_app_apiv1_trackingapi_trackorder",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tracking_no",
+                        "in": "query",
+                        "description": "The field is depreciated. Please use tracking_nos",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tracking_nos",
+                        "in": "query",
+                        "description": "The field is required. Max 50 tracking nos are allowed",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "The field is optional",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "The field is optional",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the order status"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Takes tracking_no and returns the order status",
+                "description": "This call Takes tracking_no and returns the order status",
+                "operationId": "post_app_apiv1_trackingapi_trackorder",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tracking_no",
+                        "in": "query",
+                        "description": "The field is depreciated. Please use tracking_nos",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tracking_nos",
+                        "in": "query",
+                        "description": "The field is required. Max 50 tracking nos are allowed",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "The field is optional",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "The field is optional",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the order status"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/categories-brands": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Returns all brands and categories",
+                "description": "This call Returns all brands and categories",
+                "operationId": "get_app_apiv1_trackingapi_getallpartnercategoriesbrands",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns all brands and categories"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/vehicles": {
+            "get": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Returns all vehicles registered for the company",
+                "description": "This call Returns all vehicles with their details including vehicle type, capacity, dimensions, etc.",
+                "operationId": "get_app_apiv1_trackingapi_getcompanyvehicles",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "vehicle_id",
+                        "in": "query",
+                        "description": "Optional: Filter by specific vehicle ID",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "vehicle_number",
+                        "in": "query",
+                        "description": "Optional: Filter by vehicle number/plate",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns all registered vehicles for the company"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/webhook/inventory/transfer/configure": {
+            "post": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "Configure webhook settings for loadout pallet push notifications",
+                "description": "This endpoint allows you to configure webhook URL and authentication for receiving loadout notifications",
+                "operationId": "post_app_apiv1_trackingapi_configurewebhook",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "webhook_url",
+                        "in": "query",
+                        "description": "Webhook URL to receive loadout notifications",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "access_token_webhook",
+                        "in": "query",
+                        "description": "Bearer token for webhook authentication (optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Webhook configuration saved successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/webhook/loadout/test": {
+            "post": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "Test loadout webhook endpoint connectivity",
+                "description": "This endpoint sends a test payload to your configured webhook URL to verify connectivity",
+                "operationId": "post_app_apiv1_trackingapi_testloadoutwebhook",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "webhook_url",
+                        "in": "query",
+                        "description": "Optional: Webhook URL to test (if not provided, uses configured URL)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "access_token_webhook",
+                        "in": "query",
+                        "description": "Optional: Bearer token for webhook authentication",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "loadout_id",
+                        "in": "query",
+                        "description": "Optional: Loadout ID to use real data for testing (if not provided, uses sample data)",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Test loadout webhook sent successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/webhook/info": {
+            "get": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "Get current webhook configuration",
+                "description": "This endpoint returns the current webhook configuration for loadout notifications",
+                "operationId": "get_app_apiv1_trackingapi_getwebhookinfo",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns webhook configuration"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/routes": {
+            "get": {
+                "tags": [
+                    "Routes"
+                ],
+                "summary": "Get all routes for the company",
+                "description": "This call returns all routes associated with the authenticated company",
+                "operationId": "get_app_apiv1_trackingapi_getallroutes",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns all routes for the company"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/drivers": {
+            "get": {
+                "tags": [
+                    "Drivers"
+                ],
+                "summary": "Get all drivers for the company",
+                "description": "This call returns all drivers (users with user_role = 3) associated with the authenticated company",
+                "operationId": "get_app_apiv1_trackingapi_getalldrivers",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "driver_id",
+                        "in": "query",
+                        "description": "Optional: Filter by specific driver ID",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns all drivers for the company"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/brand/category/create": {
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "This call will create brand and category",
+                "description": "This call will create brand and category",
+                "operationId": "post_app_apiv1_trackingapi_createbrandandcategory",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "brand_name",
+                        "in": "query",
+                        "description": "Brand Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "category_name",
+                        "in": "query",
+                        "description": "Category Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the created brand and category"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/product/create": {
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "This call will create product",
+                "description": "This call will create product",
+                "operationId": "post_app_apiv1_trackingapi_createproduct",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Product Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sku",
+                        "in": "query",
+                        "description": "Product SKU",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "category_id",
+                        "in": "query",
+                        "description": "Category Id",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "brand_id",
+                        "in": "query",
+                        "description": "Brand Id",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "in_stock",
+                        "in": "query",
+                        "description": "In Stock",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "volume",
+                        "in": "query",
+                        "description": "Volume(cubic meter)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "weight",
+                        "in": "query",
+                        "description": "Weight (kg)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Product description",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "base_price",
+                        "in": "query",
+                        "description": "Product Base Price",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "pallet_size",
+                        "in": "query",
+                        "description": "Product Pallet Size",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "bar_code",
+                        "in": "query",
+                        "description": "Product Bar Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "is_active",
+                        "in": "query",
+                        "description": "Product Active Status",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "tax_percentage",
+                        "in": "query",
+                        "description": "Tax Percentage",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "external_item_code",
+                        "in": "query",
+                        "description": "External Item Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "promotion_amount",
+                        "in": "query",
+                        "description": "Promotion Amount (Optional)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "promotion_code",
+                        "in": "query",
+                        "description": "Promotion Code (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the created product"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/promotion/bundle/create": {
+            "post": {
+                "tags": [
+                    "Promotion Bundle"
+                ],
+                "summary": "Create Promotion Bundle with multiple products",
+                "description": "This call creates promotion bundle entries with the same bundle code for multiple products",
+                "operationId": "post_app_apiv1_trackingapi_createpromotionbundle",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "bundle_code",
+                        "in": "query",
+                        "description": "Bundle Code (Required)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "bundle_price",
+                        "in": "query",
+                        "description": "Bundle Price (Required)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "bundle_name",
+                        "in": "query",
+                        "description": "Bundle Name (Optional)",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "product_items",
+                        "in": "query",
+                        "description": "Product Items in JSON format. Required format: [{\"external_code\":\"SKU123\",\"product_name\":\"iPhone 15\",\"quantity\":2}]. Either external_code or product_name is required along with quantity.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the created promotion bundle entries"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/promotion/bundle/get": {
+            "get": {
+                "tags": [
+                    "Promotion Bundle"
+                ],
+                "summary": "Get Promotion Bundle details",
+                "description": "This call retrieves promotion bundle entries by bundle code, name, or search term",
+                "operationId": "get_app_apiv1_trackingapi_getpromotionbundle",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "bundle_code",
+                        "in": "query",
+                        "description": "Bundle Code (Optional - use either bundle_code or bundle_name)",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "bundle_name",
+                        "in": "query",
+                        "description": "Bundle Name (Optional - use either bundle_code or bundle_name)",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search term for bundle name (Optional)",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns promotion bundle entries"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/payment/terms": {
+            "get": {
+                "tags": [
+                    "Payment Terms"
+                ],
+                "summary": "Get all payment terms for the authenticated user's company",
+                "description": "This call returns all payment terms available for the company",
+                "operationId": "get_app_apiv1_trackingapi_getpaymentterms",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns all payment terms for the company"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/product/brand-category/create": {
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "This call will create product without brand and category Ids",
+                "description": "This call will create product",
+                "operationId": "post_app_apiv1_trackingapi_createproductwithoutbrandandcategoryid",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Product Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sku",
+                        "in": "query",
+                        "description": "Product SKU",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "category_name",
+                        "in": "query",
+                        "description": "Category Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "brand_name",
+                        "in": "query",
+                        "description": "Brand Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "in_stock",
+                        "in": "query",
+                        "description": "In Stock",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "volume",
+                        "in": "query",
+                        "description": "Volume(cubic meter)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "weight",
+                        "in": "query",
+                        "description": "Weight (kg)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Product description",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "base_price",
+                        "in": "query",
+                        "description": "Product Base Price",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "bar_code",
+                        "in": "query",
+                        "description": "Product Bar Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tax_percentage",
+                        "in": "query",
+                        "description": "Tax Percentage",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "external_item_code",
+                        "in": "query",
+                        "description": "External Item Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "external_id",
+                        "in": "query",
+                        "description": "External Id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the created product"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/product/edit": {
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "This call will edit product",
+                "description": "This call will edit product",
+                "operationId": "post_app_apiv1_trackingapi_editproduct",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Product Id",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Product Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sku",
+                        "in": "query",
+                        "description": "Product SKU",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "category_name",
+                        "in": "query",
+                        "description": "Category Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "brand_name",
+                        "in": "query",
+                        "description": "Brand Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "in_stock",
+                        "in": "query",
+                        "description": "In Stock",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "volume",
+                        "in": "query",
+                        "description": "Volume(cubic meter)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "weight",
+                        "in": "query",
+                        "description": "Weight (kg)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "pallet_size",
+                        "in": "query",
+                        "description": "Pallet Size",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Product description",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "base_price",
+                        "in": "query",
+                        "description": "Product Base Price",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "is_active",
+                        "in": "query",
+                        "description": "Product Active Status",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "bar_code",
+                        "in": "query",
+                        "description": "Product Bar Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tax_percentage",
+                        "in": "query",
+                        "description": "Tax Percentage",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "external_item_code",
+                        "in": "query",
+                        "description": "External Item Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "external_id",
+                        "in": "query",
+                        "description": "External Id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "promotion_amount",
+                        "in": "query",
+                        "description": "Promotion Amount (Optional)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "promotion_code",
+                        "in": "query",
+                        "description": "Promotion Code (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the updated product"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/order/import": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Import Order.",
+                "description": "This call imports orders with all required details",
+                "operationId": "post_app_apiv1_trackingapi_createordernew",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tracking_no",
+                        "in": "query",
+                        "description": "Tracking no",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "reference_id",
+                        "in": "query",
+                        "description": "Reference id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "agent",
+                        "in": "query",
+                        "description": "Agent Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "merchant_name",
+                        "in": "query",
+                        "description": "Merchant Id/Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer",
+                        "in": "query",
+                        "description": "Customer Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "contact_person",
+                        "in": "query",
+                        "description": "Contact Person Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "description": "Customer phone",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "City",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_address",
+                        "in": "query",
+                        "description": "Customer Address",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Order Description",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Deliver_On",
+                        "in": "query",
+                        "description": "Order Deliver DateTime Format will be 2020-06-24",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "product_items",
+                        "in": "query",
+                        "description": "Product Items in json format e.g [{\"productName\": \"Green Coffee\",\"qty\": 2,\"unitPrice\": 10}]",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Import Order"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/order/create": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Create Order Optional Merchant Id",
+                "operationId": "post_app_apiv1_trackingapi_createorderwithoutmerchant",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token (Required)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tracking_no",
+                        "in": "query",
+                        "description": "Tracking no (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "reference_id",
+                        "in": "query",
+                        "description": "Reference id (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "agent",
+                        "in": "query",
+                        "description": "Agent Name (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "merchant_name",
+                        "in": "query",
+                        "description": "Merchant Id/Name (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "merchant_location_id",
+                        "in": "query",
+                        "description": "Branch/Merchant Location Id (Optional)",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "customer",
+                        "in": "query",
+                        "description": "Customer Name (Required)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "contact_person",
+                        "in": "query",
+                        "description": "Contact Person Name (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "description": "Customer phone (Required)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "City (Required)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_address",
+                        "in": "query",
+                        "description": "Customer Address (Required if lat, long not provided)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_address_lat",
+                        "in": "query",
+                        "description": "Customer Latitude (Optional)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "customer_address_lon",
+                        "in": "query",
+                        "description": "Customer Longitude (Optional)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "is_pickup",
+                        "in": "query",
+                        "description": "is Pickup possible values are 1,0 (Required)",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "pickup_address",
+                        "in": "query",
+                        "description": "Pickup Address (Required if is_pickup=1)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pickup_address_lat",
+                        "in": "query",
+                        "description": "Pickup Latitude (Optional)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "pickup_address_lon",
+                        "in": "query",
+                        "description": "Pickup Longitude (Optional)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "receiver_address",
+                        "in": "query",
+                        "description": "Receiver Address (Required if is_pickup=1)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_address_lat",
+                        "in": "query",
+                        "description": "Receiver Latitude (Optional)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "receiver_address_lon",
+                        "in": "query",
+                        "description": "Receiver Longitude (Optional)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "receiver_name",
+                        "in": "query",
+                        "description": "Receiver Name (Required if is_pickup=1)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "external_customer_code",
+                        "in": "query",
+                        "description": "Add Customer code if you make new customer or you enter the route id.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "area",
+                        "in": "query",
+                        "description": "Add area",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "block",
+                        "in": "query",
+                        "description": "Add block",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "address_id",
+                        "in": "query",
+                        "description": "Add address Id if you make new customer",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_phone",
+                        "in": "query",
+                        "description": "Receiver Phone (Required if is_pickup=1)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_postcode",
+                        "in": "query",
+                        "description": "Receiver Postcode (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_city",
+                        "in": "query",
+                        "description": "Receiver city (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cod",
+                        "in": "query",
+                        "description": "Cash on Delivery Amount (Optional)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "total_amount",
+                        "in": "query",
+                        "description": "Total Amount (Optional)",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Order Description/Notes for Driver (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "payee",
+                        "in": "query",
+                        "description": "Payee possible values are S,R (Required) S means sender will pay and R means Receiver will pay",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "S",
+                                "R"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "is_same_day_delivery",
+                        "in": "query",
+                        "description": "is same day delivery possible values are 1,0 (Required)",
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "name": "is_foc",
+                        "in": "query",
+                        "description": "is free of charge possible values are 1,0 (Required)",
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "name": "deliver_on",
+                        "in": "query",
+                        "description": "Order Deliver DateTime Format will be 2020-06-24 (Required)",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "deliver_on_time_from",
+                        "in": "query",
+                        "description": "Order Deliver Time From Format will be hh:mm (24 hours)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "deliver_on_time_to",
+                        "in": "query",
+                        "description": "Order Deliver Time To Format will be hh:mm (24 hours)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "deliver_on_time_from_utc",
+                        "in": "query",
+                        "description": "Order Deliver Time From Format will be UTC",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "deliver_on_time_to_utc",
+                        "in": "query",
+                        "description": "Order Deliver Time To Format will be UTC",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pickup_datetime_from",
+                        "in": "query",
+                        "description": "Order Pickup Date Time From Format will be 2021-12-25 hh:mm (24 hours)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pickup_datetime_to",
+                        "in": "query",
+                        "description": "Order Pickup Date Time To Format will be 2021-12-25 hh:mm (24 hours)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "payment_term_id",
+                        "in": "query",
+                        "description": "Use Payment term api to get payment term id.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "route_id",
+                        "in": "query",
+                        "description": "Use routes api to get route id.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "is_update",
+                        "in": "query",
+                        "description": "is Update possible values are 1,0. If value is 1 then tracking_no will be mandatory",
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "name": "product_items",
+                        "in": "query",
+                        "description": "Product Items in JSON format. Required format: [{\"externalProductCode\":\"xxx\",\"qty\":2,\"unitPrice\":10}] or [{\"product_name\":\"xxx\",\"qty\":2,\"product_base_price\":10,\"product_tax\":5}]",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "address_id",
+                        "in": "query",
+                        "description": "customer address ID",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_group_id",
+                        "in": "query",
+                        "description": "Customer Group ID (Optional) 1:Direct, 2:Indirect",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "is_prepaid",
+                        "in": "query",
+                        "description": "is Prepaid possible values are 1,0",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "customer_type_id",
+                        "in": "query",
+                        "description": "Customer Type:\n        1 = Individual Customer,\n        2 = Corporate Customer,\n        3 = Watchman,\n        4 = Supermarket,\n        5 = Abraaj FOC,\n        6 = Co-Packing,\n        7 = Co-operatives,\n        9 = E-commerce,\n        10 = Horeca,\n        12 = Mabara,\n        13 = Modern Trade,\n        14 = Mosques,\n        15 = Staff account",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns order object with id, trackingNo, referenceId, createdBy, locality, customer, pickupAddress, receiverAddress, items"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/inbound/create": {
+            "post": {
+                "tags": [
+                    "Warehouse Inbound Orders"
+                ],
+                "summary": "Create Warehouse Inbound Order via API",
+                "operationId": "post_app_apiv1_trackingapi_createwarehouseinboundorder",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token (Required)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_name",
+                        "in": "query",
+                        "description": "Receiver Name (Required)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_contact",
+                        "in": "query",
+                        "description": "Receiver Phone (Required)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_address",
+                        "in": "query",
+                        "description": "Receiver Address (Required)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "debtor_merchant_id",
+                        "in": "query",
+                        "description": "Merchant External ID (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "debtor_merchant_name",
+                        "in": "query",
+                        "description": "Merchant Name (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "vendor_ref_id",
+                        "in": "query",
+                        "description": "Vendor Reference ID (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "vendor_name",
+                        "in": "query",
+                        "description": "Vendor Name (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "warehouse_name",
+                        "in": "query",
+                        "description": "Warehouse Name (Required)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "loading_date",
+                        "in": "query",
+                        "description": "Loading Date (Required) Format: YYYY-MM-DD",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "rdd",
+                        "in": "query",
+                        "description": "Required Delivery Date (Required) Format: YYYY-MM-DD",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "brand_name",
+                        "in": "query",
+                        "description": "Brand Name (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "itinerary",
+                        "in": "query",
+                        "description": "Route/Itinerary (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "transport_no",
+                        "in": "query",
+                        "description": "Transport Number (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "container_code",
+                        "in": "query",
+                        "description": "Container Code (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "agent_code",
+                        "in": "query",
+                        "description": "Agent Code (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "agent_name",
+                        "in": "query",
+                        "description": "Agent Name (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "notes",
+                        "in": "query",
+                        "description": "Order Notes (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "order_code",
+                        "in": "query",
+                        "description": "Order Code (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "reference_no",
+                        "in": "query",
+                        "description": "Reference Number (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "destination_no",
+                        "in": "query",
+                        "description": "Destination Number (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "product_items",
+                        "in": "query",
+                        "description": "Product Items in JSON format. Required format: [{\"item_id\":\"733255\",\"description\":\"Product Name\",\"quantity\":60,\"volume\":0,\"net_weight\":0,\"gross_weight\":0}]",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns warehouse order object with order_id, order_number, warehouse, receiver, items"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/order/merchant/create": {
+            "post": {
+                "tags": [
+                    "Order With Dynamic Merchant"
+                ],
+                "summary": "Order Create With Merchant",
+                "description": "This call takes into account all confirmed awards, but not pending or refused awards.",
+                "operationId": "post_app_apiv1_trackingapi_createorderwithmultimerchant",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tracking_no",
+                        "in": "query",
+                        "description": "Tracking no",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "reference_id",
+                        "in": "query",
+                        "description": "Reference id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "agent",
+                        "in": "query",
+                        "description": "Agent Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "merchant_name",
+                        "in": "query",
+                        "description": "Merchant Id/Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "merchant_phone",
+                        "in": "query",
+                        "description": "Merchant Phone (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "merchant_address",
+                        "in": "query",
+                        "description": "Merchant Address (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "merchant_branch_name",
+                        "in": "query",
+                        "description": "Merchant Branch Id/Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "merchant_branch_phone",
+                        "in": "query",
+                        "description": "Merchant Branch Phone (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "merchant_branch_address",
+                        "in": "query",
+                        "description": "Merchant Branch Address (Optional)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer",
+                        "in": "query",
+                        "description": "Customer Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "contact_person",
+                        "in": "query",
+                        "description": "Contact Person Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "description": "Customer phone",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "City",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_address",
+                        "in": "query",
+                        "description": "Customer Address",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pickup_address",
+                        "in": "query",
+                        "description": "Pickup Address",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_address",
+                        "in": "query",
+                        "description": "Receiver Address",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_name",
+                        "in": "query",
+                        "description": "Receiver Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_phone",
+                        "in": "query",
+                        "description": "Receiver Phone",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cod",
+                        "in": "query",
+                        "description": "Cash on Delivery Amount",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Order Description",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "is_pickup",
+                        "in": "query",
+                        "description": "is Pickup possible values are 1,0",
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "name": "payee",
+                        "in": "query",
+                        "description": "Payee possible values are S,R",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "S",
+                                "R"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "is_same_day_delivery",
+                        "in": "query",
+                        "description": "is same day delivery possible values are 1,0",
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Deliver_On",
+                        "in": "query",
+                        "description": "Order Deliver DateTime Format will be 2020-06-24",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "product_items",
+                        "in": "query",
+                        "description": "Product Items in JSON format. Required format: [{\"externalProductCode\":\"xxx\",\"qty\":2,\"unitPrice\":10}] or [{\"product_name\":\"xxx\",\"qty\":2,\"product_base_price\":10}]",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Order Create With Merchant"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/customers/search": {
+            "get": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "This call is to search customers",
+                "description": "This call is to search customers",
+                "operationId": "get_app_apiv1_trackingapi_customersearch",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "description": "Max 25 phone nos are allowed",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "external_code",
+                        "in": "query",
+                        "description": "SAP external code(s)",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This call is to search customers"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "This call is to search customers",
+                "description": "This call is to search customers",
+                "operationId": "post_app_apiv1_trackingapi_customersearch",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "description": "Max 25 phone nos are allowed",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "external_code",
+                        "in": "query",
+                        "description": "SAP external code(s)",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This call is to search customers"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/orders/update/synced": {
+            "put": {
+                "tags": [
+                    "Export"
+                ],
+                "summary": "Push the Order To external",
+                "description": "This call will update order synced of order",
+                "operationId": "put_app_apiv1_trackingapi_ordersupdatesyncedapi",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderIds",
+                        "in": "query",
+                        "description": "comma seperated values",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tracking_nos",
+                        "in": "query",
+                        "description": "The field is required. Max 50 tracking nos are allowed",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Update order synced value of order"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Export"
+                ],
+                "summary": "Push the Order To external",
+                "description": "This call will update order synced of order",
+                "operationId": "post_app_apiv1_trackingapi_ordersupdatesyncedapi",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderIds",
+                        "in": "query",
+                        "description": "comma seperated values",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tracking_nos",
+                        "in": "query",
+                        "description": "The field is required. Max 50 tracking nos are allowed",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Update order synced value of order"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/orders/pull": {
+            "get": {
+                "tags": [
+                    "Export"
+                ],
+                "summary": "Push the Order To external",
+                "description": "This call Push the Order To external",
+                "operationId": "get_app_apiv1_trackingapi_pullordersapi",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Date From format like 2020-05-21",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "Date To format like 2020-05-21",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "include_synced",
+                        "in": "query",
+                        "description": "value = 0 means unsynced, value = 1 means synced",
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get All Orders in date range"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Export"
+                ],
+                "summary": "Push the Order To external",
+                "description": "This call Push the Order To external",
+                "operationId": "post_app_apiv1_trackingapi_pullordersapi",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Date From format like 2020-05-21",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "Date To format like 2020-05-21",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "include_synced",
+                        "in": "query",
+                        "description": "value = 0 means unsynced, value = 1 means synced",
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get All Orders in date range"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/external/push": {
+            "post": {
+                "tags": [
+                    "Export"
+                ],
+                "summary": "Push the Order To external",
+                "description": "This call Push the Order To external",
+                "operationId": "post_app_apiv1_trackingapi_externalpushapi",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Push the Order To external"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/cancel/order": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Cancel/delete the Order",
+                "description": "This call cancel/delete the Order",
+                "operationId": "post_app_apiv1_trackingapi_cancelorderapi",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tracking_no",
+                        "in": "query",
+                        "description": "Order tracking number (Optional if provided then order will be deleted)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "order_id",
+                        "in": "query",
+                        "description": "System order id",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Cancel/Delete the Order"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/aramex/order": {
+            "post": {
+                "tags": [
+                    "Aramex"
+                ],
+                "summary": "Create Aramex shipment",
+                "description": "This call creates a shipment on aramex",
+                "operationId": "post_app_apiv1_trackingapi_aramexshipment",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create aramex Order"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/aramex/quote": {
+            "get": {
+                "tags": [
+                    "Aramex"
+                ],
+                "summary": "Aramex get rate",
+                "description": "This call gets rate from aramex",
+                "operationId": "get_app_apiv1_trackingapi_aramexquote",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get aramex rate"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Aramex"
+                ],
+                "summary": "Aramex get rate",
+                "description": "This call gets rate from aramex",
+                "operationId": "post_app_apiv1_trackingapi_aramexquote",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get aramex rate"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/aramex/trackshipments": {
+            "get": {
+                "tags": [
+                    "Aramex"
+                ],
+                "summary": "Aramex Track Shipments",
+                "description": "This call gets rate from aramex",
+                "operationId": "get_app_apiv1_trackingapi_aramextrackshipments",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Track Shipments"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Aramex"
+                ],
+                "summary": "Aramex Track Shipments",
+                "description": "This call gets rate from aramex",
+                "operationId": "post_app_apiv1_trackingapi_aramextrackshipments",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Track Shipments"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/brand/edit": {
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Edit Brand",
+                "description": "This call edits an existing brand",
+                "operationId": "post_app_apiv1_trackingapi_editbrand",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Brand ID",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "brand_name",
+                        "in": "query",
+                        "description": "Brand Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "category_id",
+                        "in": "query",
+                        "description": "Category ID",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the updated brand"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/order/edit": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Edit Order",
+                "description": "This call edits an existing order",
+                "operationId": "post_app_apiv1_trackingapi_editorder",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "order_id",
+                        "in": "query",
+                        "description": "Order ID",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "tracking_no",
+                        "in": "query",
+                        "description": "Tracking Number (alternative to order_id)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "reference_id",
+                        "in": "query",
+                        "description": "Reference ID",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_name",
+                        "in": "query",
+                        "description": "Customer Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_phone",
+                        "in": "query",
+                        "description": "Customer Phone",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_address",
+                        "in": "query",
+                        "description": "Customer Address",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "customer_address_lat",
+                        "in": "query",
+                        "description": "Customer Latitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "customer_address_lon",
+                        "in": "query",
+                        "description": "Customer Longitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "pickup_latitude",
+                        "in": "query",
+                        "description": "Pickup Latitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "pickup_longitude",
+                        "in": "query",
+                        "description": "Pickup Longitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "receiver_name",
+                        "in": "query",
+                        "description": "Receiver Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_phone",
+                        "in": "query",
+                        "description": "Receiver Phone",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_address",
+                        "in": "query",
+                        "description": "Receiver Address",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "receiver_latitude",
+                        "in": "query",
+                        "description": "Receiver Latitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "receiver_longitude",
+                        "in": "query",
+                        "description": "Receiver Longitude",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "cod",
+                        "in": "query",
+                        "description": "Cash on Delivery Amount",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Order Description",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "deliver_on",
+                        "in": "query",
+                        "description": "Delivery Date (Format: YYYY-MM-DD)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "product_items",
+                        "in": "query",
+                        "description": "Product Items in JSON format. Required format: [{\"externalProductCode\":\"xxx\",\"qty\":2,\"unitPrice\":10,\"weight\":1.5}] or [{\"product_name\":\"xxx\",\"qty\":2,\"product_base_price\":10,\"product_tax\":5,\"weight\":1.5,\"category_name\":\"Category\",\"brand_name\":\"Brand\",\"product_sku\":\"SKU123\"}]",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the updated order"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/category/edit": {
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Edit Category",
+                "description": "This call edits an existing category",
+                "operationId": "post_app_apiv1_trackingapi_editcategory",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Category ID",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "category_name",
+                        "in": "query",
+                        "description": "Category Name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the updated category"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/webhook/test": {
+            "post": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "Test Webhook for Order Status Updates",
+                "description": "This endpoint sends DUMMY/SAMPLE JSON data to your webhook URL for testing purposes. No real order data is used.",
+                "operationId": "post_app_apiv1_trackingapi_testwebhook",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "webhook_url",
+                        "in": "query",
+                        "description": "Your webhook URL (optional - for testing)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "event_type",
+                        "in": "query",
+                        "description": "Event type to test (order_created, settlement_report)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns sample webhook payload for order status updates"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/webhook/order-status/configure": {
+            "post": {
+                "tags": [
+                    "Order Webhook"
+                ],
+                "summary": "Configure Order Status Webhook",
+                "description": "Set your webhook URL to receive order status update notifications when order status changes",
+                "operationId": "post_app_apiv1_trackingapi_configureorderstatuswebhook",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token (can be in query, body, or Authorization header)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "webhook_url",
+                        "in": "query",
+                        "description": "Your webhook URL to receive order status updates",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "enabled",
+                        "in": "query",
+                        "description": "Enable/disable order status webhook (1=enabled, 0=disabled)",
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Order status webhook configured successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/webhook/list": {
+            "get": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "List All Webhooks for Company",
+                "description": "This endpoint returns all configured webhooks for the company",
+                "operationId": "get_app_apiv1_trackingapi_listwebhooks",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns list of all configured webhooks"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/debug/auth": {
+            "get": {
+                "tags": [
+                    "Debug"
+                ],
+                "summary": "Debug Authentication - Check Access Token",
+                "description": "This endpoint helps debug authentication issues by showing what token data is received",
+                "operationId": "get_app_apiv1_trackingapi_debugauth",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns authentication debug information"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Debug"
+                ],
+                "summary": "Debug Authentication - Check Access Token",
+                "description": "This endpoint helps debug authentication issues by showing what token data is received",
+                "operationId": "post_app_apiv1_trackingapi_debugauth",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns authentication debug information"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/order-creation/configure": {
+            "post": {
+                "tags": [
+                    "Order Webhook"
+                ],
+                "summary": "Configure Order Creation Webhook",
+                "description": "Set your webhook URL to receive new order data when orders are created",
+                "operationId": "post_app_apiv1_trackingapi_configureordercreationwebhook",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token (can be in query, body, or Authorization header)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "webhook_url",
+                        "in": "query",
+                        "description": "Your webhook URL to receive new order data",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Order creation webhook URL configured successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/send-order": {
+            "post": {
+                "tags": [
+                    "Order Webhook"
+                ],
+                "summary": "Send Order to External Platform - Dynamic ERP Integration",
+                "description": "This endpoint sends order data to external platform via webhook.\nFor companies with ERP integration, it routes through the dynamic ERP system.",
+                "operationId": "post_app_apiv1_trackingapi_sendordertoexternalplatform",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "order_id",
+                        "in": "query",
+                        "description": "Order ID to send to external platform",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "webhook_url",
+                        "in": "query",
+                        "description": "External platform webhook URL",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Order sent to external platform successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/settlement-webhook/configure": {
+            "post": {
+                "tags": [
+                    "Settlement Webhook"
+                ],
+                "summary": "Configure Settlement Report Webhook",
+                "description": "Configure webhook to automatically send settlement report orders to external platform",
+                "operationId": "post_app_apiv1_trackingapi_configuresettlementwebhook",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "webhook_url",
+                        "in": "query",
+                        "description": "External platform webhook URL to receive settlement orders",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "enabled",
+                        "in": "query",
+                        "description": "Enable/disable settlement webhook (1=enabled, 0=disabled)",
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Settlement webhook configured successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/settlement-webhook/test": {
+            "post": {
+                "tags": [
+                    "Settlement Webhook"
+                ],
+                "summary": "Test Settlement Webhook Webhook",
+                "description": "Send test settlement data to configured webhook URL",
+                "operationId": "post_app_apiv1_trackingapi_testsettlementwebhook",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "webhook_url",
+                        "in": "query",
+                        "description": "Your webhook URL (optional - for testing)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns sample settlement webhook payload"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/optimize-orders": {
+            "post": {
+                "tags": [
+                    "Order Optimization"
+                ],
+                "summary": "Webhook endpoint for receiving orders and creating optimized Orders",
+                "description": "This endpoint receives order data and creates optimized orders automatically",
+                "operationId": "post_app_apiv1_trackingapi_optimizeorderswebhook",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orders",
+                        "in": "query",
+                        "description": "Orders JSON - Array of orders to optimize. Example: [{\"warehouse_id\": \"00\",\"deliver_on\": \"2026-01-22\",\"reference_id\": \"TEST-1735647600\",\"customer\": \"Mobi mariam\",\"phone\": \"123344566\",\"customer_address\": \"123 Test Street\",\"latitude\": 12.0000000000,\"longitude\": 12.0000000000,\"product_items\": [{\"product_id\": 123456,\"qty\": 10,\"unitPrice\": 5.50 }]}]",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns success status with optimization results"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/track/orders/pull": {
+            "get": {
+                "tags": [
+                    "Export"
+                ],
+                "operationId": "get_app_apiv1_trackingapi_pullorderapi",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Date From format like 2020-05-21",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "Date To format like 2020-05-21",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "include_synced",
+                        "in": "query",
+                        "description": "value = 0 means unsynced, value = 1 means synced",
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get All Orders in date range"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Export"
+                ],
+                "operationId": "post_app_apiv1_trackingapi_pullorderapi",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "Access Token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Date From format like 2020-05-21",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "Date To format like 2020-05-21",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "include_synced",
+                        "in": "query",
+                        "description": "value = 0 means unsynced, value = 1 means synced",
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get All Orders in date range"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "Bearer": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Login"
+        },
+        {
+            "name": "Products"
+        },
+        {
+            "name": "Customers"
+        },
+        {
+            "name": "Order"
+        },
+        {
+            "name": "Vehicles"
+        },
+        {
+            "name": "Webhooks"
+        },
+        {
+            "name": "Routes"
+        },
+        {
+            "name": "Drivers"
+        },
+        {
+            "name": "Promotion Bundle"
+        },
+        {
+            "name": "Payment Terms"
+        },
+        {
+            "name": "Warehouse Inbound Orders"
+        },
+        {
+            "name": "Order With Dynamic Merchant"
+        },
+        {
+            "name": "Export"
+        },
+        {
+            "name": "Aramex"
+        },
+        {
+            "name": "Order Webhook"
+        },
+        {
+            "name": "Debug"
+        },
+        {
+            "name": "Settlement Webhook"
+        },
+        {
+            "name": "Order Optimization"
+        }
+    ]
+}

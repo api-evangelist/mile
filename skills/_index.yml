@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/mile-partner-api-openapi-original.json
+note: >-
+  Agent Skills generated from the Mile Partner API OpenAPI. Every step is grounded in a real
+  operationId verified in openapi/mile-partner-api-openapi-original.json.
+skills:
+- file: mile-create-and-track-order.md
+  name: Create a customer, place an order, and track it
+  api: openapi/mile-partner-api-openapi-original.json
+  operations:
+  - post_app_apiv1_trackingapi_index
+  - post_app_apiv1_trackingapi_createcustomer
+  - post_app_apiv1_trackingapi_createorderwithoutmerchant
+  - get_app_apiv1_trackingapi_trackorder
+- file: mile-configure-webhooks.md
+  name: Configure and verify order-status webhooks
+  api: openapi/mile-partner-api-openapi-original.json
+  operations:
+  - post_app_apiv1_trackingapi_index
+  - post_app_apiv1_trackingapi_configureorderstatuswebhook
+  - post_app_apiv1_trackingapi_testwebhook
+  - get_app_apiv1_trackingapi_listwebhooks

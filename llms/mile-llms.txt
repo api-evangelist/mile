@@ -1,0 +1,26 @@
+# Mile
+
+> Mile is an AI-native supply chain execution platform for brands and distributors that own their inventory and fulfill orders directly to customers. It unifies Order Management (OMS), Warehouse Management (WMS), and Transportation / last-mile delivery (TMS) in one system, with MAC, an AI agent that acts on exceptions rather than only flagging them. Mile exposes a partner REST API covering orders, customers, products, routes, drivers, vehicles, Aramex shipping, and configurable webhooks.
+
+## APIs
+
+- [Mile Partner API docs](https://lastmile.milenow.com/partner/api/doc): Token-authenticated REST API under /api/v1/partners/ for orders, customers, products, routes, drivers, vehicles, Aramex shipments, and webhooks.
+- [OpenAPI (JSON)](https://lastmile.milenow.com/partner/api/doc.json): OpenAPI 3.0.0 definition, 45 paths / 53 operations.
+
+## Specs
+
+- [openapi/mile-partner-api-openapi-original.json](https://raw.githubusercontent.com/api-evangelist/mile/refs/heads/main/openapi/mile-partner-api-openapi-original.json): Verbatim OpenAPI 3.0.0 for the Mile Partner API.
+- [authentication/mile-authentication.yml](https://raw.githubusercontent.com/api-evangelist/mile/refs/heads/main/authentication/mile-authentication.yml): Auth profile — login for an access_token, then Bearer / access_token query param.
+- [asyncapi/mile-webhooks.yml](https://raw.githubusercontent.com/api-evangelist/mile/refs/heads/main/asyncapi/mile-webhooks.yml): Webhook catalog (order-status, order-creation, settlement, inventory-transfer).
+- [conventions/mile-conventions.yml](https://raw.githubusercontent.com/api-evangelist/mile/refs/heads/main/conventions/mile-conventions.yml): Cross-cutting request/response conventions.
+- [data-model/mile-data-model.yml](https://raw.githubusercontent.com/api-evangelist/mile/refs/heads/main/data-model/mile-data-model.yml): Entity model derived from the API.
+
+## Docs
+
+- [Product overview](https://milenow.com): Mile AI supply chain execution platform.
+- [Integration Hub](https://www.milenow.com/en/integration-hub/): APIs, webhooks and integrations overview.
+- [Features](https://www.milenow.com/en/features/): Platform features (OMS, WMS, TMS, MAC AI agent, route optimization).
+- [Blog](https://www.milenow.com/en/blogpost/): Mile Post blog.
+- [Sign up](https://www.milenow.com/en/sign-up/): Create a Mile account.
+- [Pricing](https://www.milenow.com/en/pricing/): Mile pricing.
+- [Terms & Conditions](https://www.milenow.com/en/terms-and-conditions/): Legal terms.

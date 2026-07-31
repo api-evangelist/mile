@@ -1,0 +1,94 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/mile-partner-api-openapi-original.json
+note: >-
+  No official hosted/remote MCP server was found for Mile. This is a candidate tool list
+  derived one-to-one from the Mile Partner API operations, suitable for generating an MCP
+  server over the OpenAPI. Not an official Mile product.
+server:
+  name: mile
+  transport: http
+  url: null
+tools:
+- name: ping_api
+  description: Check whether the Mile API server is active
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_pingapi
+- name: login
+  description: Take username and password and return an access token
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_index
+- name: list_products
+  description: Return all shipment products
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_getallpartnerproducts
+- name: list_categories_brands
+  description: Return all brands and categories
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_getallpartnercategoriesbrands
+- name: create_product
+  description: Create a product
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_createproduct
+- name: create_brand_and_category
+  description: Create a brand and category
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_createbrandandcategory
+- name: edit_product
+  description: Edit a product
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_editproduct
+- name: create_customer
+  description: Create or update a customer
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_createcustomer
+- name: search_customers
+  description: Search customers
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_customersearch
+- name: create_order
+  description: Create an order (optional merchant id)
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_createorderwithoutmerchant
+- name: import_order
+  description: Import an order
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_createordernew
+- name: edit_order
+  description: Edit an order
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_editorder
+- name: cancel_order
+  description: Cancel or delete an order
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_cancelorderapi
+- name: track_order
+  description: Take a tracking number and return order status
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_trackorder
+- name: return_order_item
+  description: Return order items
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_returnorderitem
+- name: create_warehouse_inbound_order
+  description: Create a warehouse inbound order
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_createwarehouseinboundorder
+- name: optimize_orders
+  description: Submit orders and create optimized orders
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_optimizeorderswebhook
+- name: list_routes
+  description: Get all routes for the company
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_getallroutes
+- name: list_drivers
+  description: Get all drivers for the company
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_getalldrivers
+- name: list_vehicles
+  description: Return all vehicles registered for the company
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_getcompanyvehicles
+- name: get_payment_terms
+  description: Get all payment terms for the company
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_getpaymentterms
+- name: create_promotion_bundle
+  description: Create a promotion bundle with multiple products
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_createpromotionbundle
+- name: aramex_create_shipment
+  description: Create an Aramex shipment
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_aramexshipment
+- name: aramex_quote
+  description: Get an Aramex rate quote
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_aramexquote
+- name: aramex_track_shipments
+  description: Track Aramex shipments
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_aramextrackshipments
+- name: configure_order_status_webhook
+  description: Configure the order-status webhook
+  source_operation: openapi/mile-partner-api-openapi-original.json#post_app_apiv1_trackingapi_configureorderstatuswebhook
+- name: list_webhooks
+  description: List all webhooks for the company
+  source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_listwebhooks

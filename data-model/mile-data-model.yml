@@ -1,0 +1,71 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/mile-partner-api-openapi-original.json
+note: >-
+  Entity model derived from the Mile Partner API operations and tags. The published OpenAPI
+  declares no component schemas, so entities and relationships are inferred from operation
+  paths, tags, and parameters rather than JSON schema $refs.
+entities:
+- name: Customer
+  operations: [createcustomer, customersearch]
+- name: Product
+  operations: [getallpartnerproducts, createproduct, editproduct, createproductwithoutbrandandcategoryid]
+- name: Brand
+  operations: [createbrandandcategory, editbrand]
+- name: Category
+  operations: [getallpartnercategoriesbrands, editcategory]
+- name: PromotionBundle
+  operations: [createpromotionbundle, getpromotionbundle]
+- name: Order
+  operations: [createorderwithoutmerchant, createordernew, createorderwithmultimerchant, editorder, cancelorderapi, trackorder, returnorderitem]
+- name: WarehouseInboundOrder
+  operations: [createwarehouseinboundorder]
+- name: Route
+  operations: [getallroutes]
+- name: Driver
+  operations: [getalldrivers]
+- name: Vehicle
+  operations: [getcompanyvehicles]
+- name: PaymentTerm
+  operations: [getpaymentterms]
+- name: AramexShipment
+  operations: [aramexshipment, aramexquote, aramextrackshipments]
+- name: Webhook
+  operations: [configureorderstatuswebhook, configureordercreationwebhook, configuresettlementwebhook, configurewebhook, listwebhooks, getwebhookinfo]
+relationships:
+- from: Order
+  to: Customer
+  type: belongs_to
+  via: customer
+- from: Order
+  to: Product
+  type: has_many
+  via: items
+- from: Product
+  to: Brand
+  type: belongs_to
+  via: brand
+- from: Product
+  to: Category
+  type: belongs_to
+  via: category
+- from: PromotionBundle
+  to: Product
+  type: has_many
+  via: products
+- from: Order
+  to: Route
+  type: has_one
+  via: route
+- from: Route
+  to: Driver
+  type: has_one
+  via: driver
+- from: Route
+  to: Vehicle
+  type: has_one
+  via: vehicle
+- from: Order
+  to: AramexShipment
+  type: has_one
+  via: shipment
