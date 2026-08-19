@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Settlement Webhook API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Settlement Webhook",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Configure Settlement Report Webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/settlement-webhook/configure",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "webhook_url",
+                "value": "",
+                "type": "query",
+                "description": "External platform webhook URL to receive settlement orders"
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "Enable/disable settlement webhook (1=enabled, 0=disabled)"
+              }
+            ]
+          },
+          "docs": "Configure webhook to automatically send settlement report orders to external platform"
+        },
+        {
+          "info": {
+            "name": "Test Settlement Webhook Webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/settlement-webhook/test",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "webhook_url",
+                "value": "",
+                "type": "query",
+                "description": "Your webhook URL (optional - for testing)"
+              }
+            ]
+          },
+          "docs": "Send test settlement data to configured webhook URL"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

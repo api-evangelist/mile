@@ -1,0 +1,381 @@
+{
+  "item": [
+    {
+      "id": "bc40807f-73c0-41cd-91a9-5a1018153916",
+      "name": "Order With Dynamic Merchant",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fcec17e8-ee06-47f1-95a8-589f520ca9f5",
+          "name": "Order Create With Merchant",
+          "request": {
+            "name": "Order Create With Merchant",
+            "description": {
+              "content": "This call takes into account all confirmed awards, but not pending or refused awards.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "order",
+                "merchant",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_no",
+                  "value": "<string>",
+                  "description": "Tracking no"
+                },
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "Reference id"
+                },
+                {
+                  "disabled": false,
+                  "key": "agent",
+                  "value": "<string>",
+                  "description": "Agent Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchant_name",
+                  "value": "<string>",
+                  "description": "Merchant Id/Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchant_phone",
+                  "value": "<string>",
+                  "description": "Merchant Phone (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchant_address",
+                  "value": "<string>",
+                  "description": "Merchant Address (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchant_branch_name",
+                  "value": "<string>",
+                  "description": "Merchant Branch Id/Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchant_branch_phone",
+                  "value": "<string>",
+                  "description": "Merchant Branch Phone (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchant_branch_address",
+                  "value": "<string>",
+                  "description": "Merchant Branch Address (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer",
+                  "value": "<string>",
+                  "description": "Customer Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "contact_person",
+                  "value": "<string>",
+                  "description": "Contact Person Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone",
+                  "value": "<string>",
+                  "description": "Customer phone"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "City"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_address",
+                  "value": "<string>",
+                  "description": "Customer Address"
+                },
+                {
+                  "disabled": false,
+                  "key": "pickup_address",
+                  "value": "<string>",
+                  "description": "Pickup Address"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_address",
+                  "value": "<string>",
+                  "description": "Receiver Address"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_name",
+                  "value": "<string>",
+                  "description": "Receiver Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_phone",
+                  "value": "<string>",
+                  "description": "Receiver Phone"
+                },
+                {
+                  "disabled": false,
+                  "key": "cod",
+                  "value": "<number>",
+                  "description": "Cash on Delivery Amount"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Order Description"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_pickup",
+                  "value": "<integer>",
+                  "description": "is Pickup possible values are 1,0"
+                },
+                {
+                  "disabled": false,
+                  "key": "payee",
+                  "value": "<string>",
+                  "description": "Payee possible values are S,R"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_same_day_delivery",
+                  "value": "<integer>",
+                  "description": "is same day delivery possible values are 1,0"
+                },
+                {
+                  "disabled": false,
+                  "key": "Deliver_On",
+                  "value": "<date>",
+                  "description": "Order Deliver DateTime Format will be 2020-06-24"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_items",
+                  "value": "<string>",
+                  "description": "Product Items in JSON format. Required format: [{\"externalProductCode\":\"xxx\",\"qty\":2,\"unitPrice\":10}] or [{\"product_name\":\"xxx\",\"qty\":2,\"product_base_price\":10}]"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfacd37f-815a-4e3a-b4f2-7485f1b7d15d",
+              "name": "Order Create With Merchant",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "order",
+                    "merchant",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchant_phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchant_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchant_branch_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchant_branch_phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchant_branch_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contact_person",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pickup_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "receiver_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "receiver_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "receiver_phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cod",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_pickup",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "payee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_same_day_delivery",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "Deliver_On",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "product_items",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lastmile.milenow.com/index.php",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d5e7535f-7646-48ca-82d5-379e1f091fd5",
+    "name": "Api Documentation Aramex Order With Dynamic Merchant API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "c2d9fbb5-6ed7-4d20-9775-ad59c491f9e8",
+      "name": "Order Optimization",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "53bdc89e-7143-464a-96bf-7e02c62a797c",
+          "name": "Webhook endpoint for receiving orders and creating optimized Orders",
+          "request": {
+            "name": "Webhook endpoint for receiving orders and creating optimized Orders",
+            "description": {
+              "content": "This endpoint receives order data and creates optimized orders automatically",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "optimize-orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "orders",
+                  "value": "<string>",
+                  "description": "Orders JSON - Array of orders to optimize. Example: [{\"warehouse_id\": \"00\",\"deliver_on\": \"2026-01-22\",\"reference_id\": \"TEST-1735647600\",\"customer\": \"Mobi mariam\",\"phone\": \"123344566\",\"customer_address\": \"123 Test Street\",\"latitude\": 12.0000000000,\"longitude\": 12.0000000000,\"product_items\": [{\"product_id\": 123456,\"qty\": 10,\"unitPrice\": 5.50 }]}]"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a851d94b-ac3f-447b-a64b-c6883bdb49f4",
+              "name": "Returns success status with optimization results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "optimize-orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orders",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lastmile.milenow.com/index.php",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "879a4f36-f495-4d50-906f-723ffdc048a1",
+    "name": "Api Documentation Aramex Order Optimization API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

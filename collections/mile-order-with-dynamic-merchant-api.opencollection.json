@@ -1,0 +1,193 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Order With Dynamic Merchant API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Order With Dynamic Merchant",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Order Create With Merchant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/order/merchant/create",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "tracking_no",
+                "value": "",
+                "type": "query",
+                "description": "Tracking no"
+              },
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query",
+                "description": "Reference id"
+              },
+              {
+                "name": "agent",
+                "value": "",
+                "type": "query",
+                "description": "Agent Name"
+              },
+              {
+                "name": "merchant_name",
+                "value": "",
+                "type": "query",
+                "description": "Merchant Id/Name"
+              },
+              {
+                "name": "merchant_phone",
+                "value": "",
+                "type": "query",
+                "description": "Merchant Phone (Optional)"
+              },
+              {
+                "name": "merchant_address",
+                "value": "",
+                "type": "query",
+                "description": "Merchant Address (Optional)"
+              },
+              {
+                "name": "merchant_branch_name",
+                "value": "",
+                "type": "query",
+                "description": "Merchant Branch Id/Name"
+              },
+              {
+                "name": "merchant_branch_phone",
+                "value": "",
+                "type": "query",
+                "description": "Merchant Branch Phone (Optional)"
+              },
+              {
+                "name": "merchant_branch_address",
+                "value": "",
+                "type": "query",
+                "description": "Merchant Branch Address (Optional)"
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query",
+                "description": "Customer Name"
+              },
+              {
+                "name": "contact_person",
+                "value": "",
+                "type": "query",
+                "description": "Contact Person Name"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "Customer phone"
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "City"
+              },
+              {
+                "name": "customer_address",
+                "value": "",
+                "type": "query",
+                "description": "Customer Address"
+              },
+              {
+                "name": "pickup_address",
+                "value": "",
+                "type": "query",
+                "description": "Pickup Address"
+              },
+              {
+                "name": "receiver_address",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Address"
+              },
+              {
+                "name": "receiver_name",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Name"
+              },
+              {
+                "name": "receiver_phone",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Phone"
+              },
+              {
+                "name": "cod",
+                "value": "",
+                "type": "query",
+                "description": "Cash on Delivery Amount"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Order Description"
+              },
+              {
+                "name": "is_pickup",
+                "value": "",
+                "type": "query",
+                "description": "is Pickup possible values are 1,0"
+              },
+              {
+                "name": "payee",
+                "value": "",
+                "type": "query",
+                "description": "Payee possible values are S,R"
+              },
+              {
+                "name": "is_same_day_delivery",
+                "value": "",
+                "type": "query",
+                "description": "is same day delivery possible values are 1,0"
+              },
+              {
+                "name": "Deliver_On",
+                "value": "",
+                "type": "query",
+                "description": "Order Deliver DateTime Format will be 2020-06-24"
+              },
+              {
+                "name": "product_items",
+                "value": "",
+                "type": "query",
+                "description": "Product Items in JSON format. Required format: [{\"externalProductCode\":\"xxx\",\"qty\":2,\"unitPrice\":10}] or [{\"product_name\":\"xxx\",\"qty\":2,\"product_base_price\":10}]"
+              }
+            ]
+          },
+          "docs": "This call takes into account all confirmed awards, but not pending or refused awards."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1295 @@
+{
+  "item": [
+    {
+      "id": "1f745b1c-9070-4e11-9391-4e86a993224f",
+      "name": "Products",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e5639352-52f3-466c-b7e4-d0ef974dda2a",
+          "name": "Returns all shipment products",
+          "request": {
+            "name": "Returns all shipment products",
+            "description": {
+              "content": "This call Returns all shipment products",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_product_code",
+                  "value": "<string>",
+                  "description": "This is optional. If you pass external_product_code then only that product to this will return"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "370f5e2e-5b4c-455e-a3e7-c1bb8cc6a3d1",
+              "name": "Returns all shipment products",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_product_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "712d9aa0-983b-4a70-94a3-ff105a629658",
+          "name": "Returns all brands and categories",
+          "request": {
+            "name": "Returns all brands and categories",
+            "description": {
+              "content": "This call Returns all brands and categories",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "categories-brands"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b0fd843-a88d-47e2-97f8-36803174d0de",
+              "name": "Returns all brands and categories",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "categories-brands"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0531b9ea-25a3-42fa-8a77-9b21b4235a79",
+          "name": "This call will create brand and category",
+          "request": {
+            "name": "This call will create brand and category",
+            "description": {
+              "content": "This call will create brand and category",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "brand",
+                "category",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "brand_name",
+                  "value": "<string>",
+                  "description": "Brand Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "category_name",
+                  "value": "<string>",
+                  "description": "Category Name"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8201e36c-a155-4ca4-9e26-d29c53ce10cf",
+              "name": "Returns the created brand and category",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "brand",
+                    "category",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "brand_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c97477a1-c85a-491c-af06-cf63b1abe92d",
+          "name": "This call will create product",
+          "request": {
+            "name": "This call will create product",
+            "description": {
+              "content": "This call will create product",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "product",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Product Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "sku",
+                  "value": "<string>",
+                  "description": "Product SKU"
+                },
+                {
+                  "disabled": false,
+                  "key": "category_id",
+                  "value": "<integer>",
+                  "description": "Category Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "brand_id",
+                  "value": "<integer>",
+                  "description": "Brand Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "in_stock",
+                  "value": "<integer>",
+                  "description": "In Stock"
+                },
+                {
+                  "disabled": false,
+                  "key": "volume",
+                  "value": "<number>",
+                  "description": "Volume(cubic meter)"
+                },
+                {
+                  "disabled": false,
+                  "key": "weight",
+                  "value": "<number>",
+                  "description": "Weight (kg)"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Product description"
+                },
+                {
+                  "disabled": false,
+                  "key": "base_price",
+                  "value": "<number>",
+                  "description": "Product Base Price"
+                },
+                {
+                  "disabled": false,
+                  "key": "pallet_size",
+                  "value": "<number>",
+                  "description": "Product Pallet Size"
+                },
+                {
+                  "disabled": false,
+                  "key": "bar_code",
+                  "value": "<string>",
+                  "description": "Product Bar Code"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_active",
+                  "value": "<boolean>",
+                  "description": "Product Active Status"
+                },
+                {
+                  "disabled": false,
+                  "key": "tax_percentage",
+                  "value": "<number>",
+                  "description": "Tax Percentage"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_item_code",
+                  "value": "<string>",
+                  "description": "External Item Code"
+                },
+                {
+                  "disabled": false,
+                  "key": "promotion_amount",
+                  "value": "<number>",
+                  "description": "Promotion Amount (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "promotion_code",
+                  "value": "<string>",
+                  "description": "Promotion Code (Optional)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bdd6929d-6627-4611-8066-9e0b682a1ad6",
+              "name": "Returns the created product",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "product",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sku",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "brand_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "in_stock",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "volume",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "weight",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "base_price",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "pallet_size",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "bar_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "tax_percentage",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "external_item_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "promotion_amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "promotion_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a262381d-189b-46c3-a8b8-09c986cd3c7b",
+          "name": "This call will create product without brand and category Ids",
+          "request": {
+            "name": "This call will create product without brand and category Ids",
+            "description": {
+              "content": "This call will create product",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "product",
+                "brand-category",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Product Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "sku",
+                  "value": "<string>",
+                  "description": "Product SKU"
+                },
+                {
+                  "disabled": false,
+                  "key": "category_name",
+                  "value": "<string>",
+                  "description": "Category Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "brand_name",
+                  "value": "<string>",
+                  "description": "Brand Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "in_stock",
+                  "value": "<integer>",
+                  "description": "In Stock"
+                },
+                {
+                  "disabled": false,
+                  "key": "volume",
+                  "value": "<number>",
+                  "description": "Volume(cubic meter)"
+                },
+                {
+                  "disabled": false,
+                  "key": "weight",
+                  "value": "<number>",
+                  "description": "Weight (kg)"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Product description"
+                },
+                {
+                  "disabled": false,
+                  "key": "base_price",
+                  "value": "<number>",
+                  "description": "Product Base Price"
+                },
+                {
+                  "disabled": false,
+                  "key": "bar_code",
+                  "value": "<string>",
+                  "description": "Product Bar Code"
+                },
+                {
+                  "disabled": false,
+                  "key": "tax_percentage",
+                  "value": "<number>",
+                  "description": "Tax Percentage"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_item_code",
+                  "value": "<string>",
+                  "description": "External Item Code"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_id",
+                  "value": "<string>",
+                  "description": "External Id"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b15c9e7a-bcd9-4f06-978f-a913b8aae2f1",
+              "name": "Returns the created product",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "product",
+                    "brand-category",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sku",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "brand_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "in_stock",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "volume",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "weight",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "base_price",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "bar_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tax_percentage",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "external_item_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "acfa1982-70a7-468f-b71a-53d7bb4fff36",
+          "name": "This call will edit product",
+          "request": {
+            "name": "This call will edit product",
+            "description": {
+              "content": "This call will edit product",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "product",
+                "edit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "Product Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Product Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "sku",
+                  "value": "<string>",
+                  "description": "Product SKU"
+                },
+                {
+                  "disabled": false,
+                  "key": "category_name",
+                  "value": "<string>",
+                  "description": "Category Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "brand_name",
+                  "value": "<string>",
+                  "description": "Brand Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "in_stock",
+                  "value": "<integer>",
+                  "description": "In Stock"
+                },
+                {
+                  "disabled": false,
+                  "key": "volume",
+                  "value": "<number>",
+                  "description": "Volume(cubic meter)"
+                },
+                {
+                  "disabled": false,
+                  "key": "weight",
+                  "value": "<number>",
+                  "description": "Weight (kg)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pallet_size",
+                  "value": "<number>",
+                  "description": "Pallet Size"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Product description"
+                },
+                {
+                  "disabled": false,
+                  "key": "base_price",
+                  "value": "<number>",
+                  "description": "Product Base Price"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_active",
+                  "value": "<boolean>",
+                  "description": "Product Active Status"
+                },
+                {
+                  "disabled": false,
+                  "key": "bar_code",
+                  "value": "<string>",
+                  "description": "Product Bar Code"
+                },
+                {
+                  "disabled": false,
+                  "key": "tax_percentage",
+                  "value": "<number>",
+                  "description": "Tax Percentage"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_item_code",
+                  "value": "<string>",
+                  "description": "External Item Code"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_id",
+                  "value": "<string>",
+                  "description": "External Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "promotion_amount",
+                  "value": "<number>",
+                  "description": "Promotion Amount (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "promotion_code",
+                  "value": "<string>",
+                  "description": "Promotion Code (Optional)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2bcee10f-851c-427d-b96a-772490496150",
+              "name": "Returns the updated product",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "product",
+                    "edit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sku",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "brand_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "in_stock",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "volume",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "weight",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "pallet_size",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "base_price",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "is_active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "bar_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tax_percentage",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "external_item_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "promotion_amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "promotion_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70fac324-f5d1-4f01-8a94-7eacccb17550",
+          "name": "Edit Brand",
+          "request": {
+            "name": "Edit Brand",
+            "description": {
+              "content": "This call edits an existing brand",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "brand",
+                "edit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "Brand ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "brand_name",
+                  "value": "<string>",
+                  "description": "Brand Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "category_id",
+                  "value": "<integer>",
+                  "description": "Category ID"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c27670b9-2f02-46d7-ab4d-41a077b43360",
+              "name": "Returns the updated brand",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "brand",
+                    "edit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "brand_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ee8ee90-519d-4ee0-8e6d-0667779b58ee",
+          "name": "Edit Category",
+          "request": {
+            "name": "Edit Category",
+            "description": {
+              "content": "This call edits an existing category",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "category",
+                "edit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "Category ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "category_name",
+                  "value": "<string>",
+                  "description": "Category Name"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e4fd481d-80bd-41d0-a984-e019ce8ec663",
+              "name": "Returns the updated category",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "category",
+                    "edit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "category_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lastmile.milenow.com/index.php",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4004b938-f39c-43c6-89eb-92391d2dc9c7",
+    "name": "Api Documentation Aramex Products API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

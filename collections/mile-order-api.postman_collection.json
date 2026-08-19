@@ -1,0 +1,1616 @@
+{
+  "item": [
+    {
+      "id": "a2af2157-97e1-4de4-a8f1-d91d879641a6",
+      "name": "Order",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7df5eff9-5eba-4657-8596-985dee4550fe",
+          "name": "Return order items",
+          "request": {
+            "name": "Return order items",
+            "description": {
+              "content": "This call returns order items",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "order",
+                "item",
+                "return"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_id",
+                  "value": "<integer>",
+                  "description": "Order id"
+                },
+                {
+                  "disabled": false,
+                  "key": "return_latitude",
+                  "value": "<number>",
+                  "description": "Return Latitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "return_longitude",
+                  "value": "<number>",
+                  "description": "Return Longitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "return_address",
+                  "value": "<string>",
+                  "description": "Return Address"
+                },
+                {
+                  "disabled": false,
+                  "key": "items",
+                  "value": "<string>",
+                  "description": "Order Items format should be in json like [{\"product_id\":23,\"quantity\":1}]"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ce171205-9949-4e6c-9bb1-59fecf9c7749",
+              "name": "Returns Order Items",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "order",
+                    "item",
+                    "return"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "return_latitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "return_longitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "return_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "items",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b80533f2-2654-4632-9c05-d4f925d242dd",
+          "name": "Takes tracking_no and returns the order status",
+          "request": {
+            "name": "Takes tracking_no and returns the order status",
+            "description": {
+              "content": "This call Takes tracking_no and returns the order status",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "track",
+                "order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_no",
+                  "value": "<string>",
+                  "description": "The field is depreciated. Please use tracking_nos"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_nos",
+                  "value": "<string>",
+                  "description": "The field is required. Max 50 tracking nos are allowed"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_nos",
+                  "value": "<string>",
+                  "description": "The field is required. Max 50 tracking nos are allowed"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_from",
+                  "value": "<string>",
+                  "description": "The field is optional"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_to",
+                  "value": "<string>",
+                  "description": "The field is optional"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c06b5a8-6095-4866-a323-0e1359d51624",
+              "name": "Returns the order status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "track",
+                    "order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_nos",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_nos",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_to",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "96220acb-8457-4546-8865-96d04254fc3c",
+          "name": "Takes tracking_no and returns the order status",
+          "request": {
+            "name": "Takes tracking_no and returns the order status",
+            "description": {
+              "content": "This call Takes tracking_no and returns the order status",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "track",
+                "order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_no",
+                  "value": "<string>",
+                  "description": "The field is depreciated. Please use tracking_nos"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_nos",
+                  "value": "<string>",
+                  "description": "The field is required. Max 50 tracking nos are allowed"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_nos",
+                  "value": "<string>",
+                  "description": "The field is required. Max 50 tracking nos are allowed"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_from",
+                  "value": "<string>",
+                  "description": "The field is optional"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_to",
+                  "value": "<string>",
+                  "description": "The field is optional"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a0dced4c-813f-409a-98e6-a2e6e84ce418",
+              "name": "Returns the order status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "track",
+                    "order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_nos",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_nos",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_to",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c9590e4-347e-428a-83c8-b7e67df1eb3e",
+          "name": "Import Order.",
+          "request": {
+            "name": "Import Order.",
+            "description": {
+              "content": "This call imports orders with all required details",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "order",
+                "import"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_no",
+                  "value": "<string>",
+                  "description": "Tracking no"
+                },
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "Reference id"
+                },
+                {
+                  "disabled": false,
+                  "key": "agent",
+                  "value": "<string>",
+                  "description": "Agent Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchant_name",
+                  "value": "<string>",
+                  "description": "Merchant Id/Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer",
+                  "value": "<string>",
+                  "description": "Customer Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "contact_person",
+                  "value": "<string>",
+                  "description": "Contact Person Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone",
+                  "value": "<string>",
+                  "description": "Customer phone"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "City"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_address",
+                  "value": "<string>",
+                  "description": "Customer Address"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Order Description"
+                },
+                {
+                  "disabled": false,
+                  "key": "Deliver_On",
+                  "value": "<string>",
+                  "description": "Order Deliver DateTime Format will be 2020-06-24"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_items",
+                  "value": "<string>",
+                  "description": "Product Items in json format e.g [{\"productName\": \"Green Coffee\",\"qty\": 2,\"unitPrice\": 10}]"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bfc52fa7-1f8a-4c3a-9123-70c05574c023",
+              "name": "Import Order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "order",
+                    "import"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contact_person",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Deliver_On",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_items",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1aeeeba8-5c82-45f4-967e-45ed885e1302",
+          "name": "Create Order Optional Merchant Id",
+          "request": {
+            "name": "Create Order Optional Merchant Id",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "order",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token (Required)"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_no",
+                  "value": "<string>",
+                  "description": "Tracking no (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "Reference id (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "agent",
+                  "value": "<string>",
+                  "description": "Agent Name (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchant_name",
+                  "value": "<string>",
+                  "description": "Merchant Id/Name (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchant_location_id",
+                  "value": "<integer>",
+                  "description": "Branch/Merchant Location Id (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer",
+                  "value": "<string>",
+                  "description": "Customer Name (Required)"
+                },
+                {
+                  "disabled": false,
+                  "key": "contact_person",
+                  "value": "<string>",
+                  "description": "Contact Person Name (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone",
+                  "value": "<string>",
+                  "description": "Customer phone (Required)"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "City (Required)"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_address",
+                  "value": "<string>",
+                  "description": "Customer Address (Required if lat, long not provided)"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_address_lat",
+                  "value": "<number>",
+                  "description": "Customer Latitude (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_address_lon",
+                  "value": "<number>",
+                  "description": "Customer Longitude (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_pickup",
+                  "value": "<integer>",
+                  "description": "is Pickup possible values are 1,0 (Required)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pickup_address",
+                  "value": "<string>",
+                  "description": "Pickup Address (Required if is_pickup=1)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pickup_address_lat",
+                  "value": "<number>",
+                  "description": "Pickup Latitude (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pickup_address_lon",
+                  "value": "<number>",
+                  "description": "Pickup Longitude (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_address",
+                  "value": "<string>",
+                  "description": "Receiver Address (Required if is_pickup=1)"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_address_lat",
+                  "value": "<number>",
+                  "description": "Receiver Latitude (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_address_lon",
+                  "value": "<number>",
+                  "description": "Receiver Longitude (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_name",
+                  "value": "<string>",
+                  "description": "Receiver Name (Required if is_pickup=1)"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_customer_code",
+                  "value": "<string>",
+                  "description": "Add Customer code if you make new customer or you enter the route id."
+                },
+                {
+                  "disabled": false,
+                  "key": "area",
+                  "value": "<string>",
+                  "description": "Add area"
+                },
+                {
+                  "disabled": false,
+                  "key": "block",
+                  "value": "<string>",
+                  "description": "Add block"
+                },
+                {
+                  "disabled": false,
+                  "key": "address_id",
+                  "value": "<string>",
+                  "description": "Add address Id if you make new customer"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_phone",
+                  "value": "<string>",
+                  "description": "Receiver Phone (Required if is_pickup=1)"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_postcode",
+                  "value": "<string>",
+                  "description": "Receiver Postcode (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_city",
+                  "value": "<string>",
+                  "description": "Receiver city (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "cod",
+                  "value": "<number>",
+                  "description": "Cash on Delivery Amount (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "total_amount",
+                  "value": "<number>",
+                  "description": "Total Amount (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Order Description/Notes for Driver (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "payee",
+                  "value": "<string>",
+                  "description": "Payee possible values are S,R (Required) S means sender will pay and R means Receiver will pay"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_same_day_delivery",
+                  "value": "<integer>",
+                  "description": "is same day delivery possible values are 1,0 (Required)"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_foc",
+                  "value": "<integer>",
+                  "description": "is free of charge possible values are 1,0 (Required)"
+                },
+                {
+                  "disabled": false,
+                  "key": "deliver_on",
+                  "value": "<date>",
+                  "description": "Order Deliver DateTime Format will be 2020-06-24 (Required)"
+                },
+                {
+                  "disabled": false,
+                  "key": "deliver_on_time_from",
+                  "value": "<string>",
+                  "description": "Order Deliver Time From Format will be hh:mm (24 hours)"
+                },
+                {
+                  "disabled": false,
+                  "key": "deliver_on_time_to",
+                  "value": "<string>",
+                  "description": "Order Deliver Time To Format will be hh:mm (24 hours)"
+                },
+                {
+                  "disabled": false,
+                  "key": "deliver_on_time_from_utc",
+                  "value": "<string>",
+                  "description": "Order Deliver Time From Format will be UTC"
+                },
+                {
+                  "disabled": false,
+                  "key": "deliver_on_time_to_utc",
+                  "value": "<string>",
+                  "description": "Order Deliver Time To Format will be UTC"
+                },
+                {
+                  "disabled": false,
+                  "key": "pickup_datetime_from",
+                  "value": "<string>",
+                  "description": "Order Pickup Date Time From Format will be 2021-12-25 hh:mm (24 hours)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pickup_datetime_to",
+                  "value": "<string>",
+                  "description": "Order Pickup Date Time To Format will be 2021-12-25 hh:mm (24 hours)"
+                },
+                {
+                  "disabled": false,
+                  "key": "payment_term_id",
+                  "value": "<integer>",
+                  "description": "Use Payment term api to get payment term id."
+                },
+                {
+                  "disabled": false,
+                  "key": "route_id",
+                  "value": "<integer>",
+                  "description": "Use routes api to get route id."
+                },
+                {
+                  "disabled": false,
+                  "key": "is_update",
+                  "value": "<integer>",
+                  "description": "is Update possible values are 1,0. If value is 1 then tracking_no will be mandatory"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_items",
+                  "value": "<string>",
+                  "description": "Product Items in JSON format. Required format: [{\"externalProductCode\":\"xxx\",\"qty\":2,\"unitPrice\":10}] or [{\"product_name\":\"xxx\",\"qty\":2,\"product_base_price\":10,\"product_tax\":5}]"
+                },
+                {
+                  "disabled": false,
+                  "key": "address_id",
+                  "value": "<string>",
+                  "description": "customer address ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_group_id",
+                  "value": "<integer>",
+                  "description": "Customer Group ID (Optional) 1:Direct, 2:Indirect"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_prepaid",
+                  "value": "<integer>",
+                  "description": "is Prepaid possible values are 1,0"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_type_id",
+                  "value": "<integer>",
+                  "description": "Customer Type:\n        1 = Individual Customer,\n        2 = Corporate Customer,\n        3 = Watchman,\n        4 = Supermarket,\n        5 = Abraaj FOC,\n        6 = Co-Packing,\n        7 = Co-operatives,\n        9 = E-commerce,\n        10 = Horeca,\n        12 = Mabara,\n        13 = Modern Trade,\n        14 = Mosques,\n        15 = Staff account"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6045c875-f6c6-490f-ad93-fe7f2995be5b",
+              "name": "Returns order object with id, trackingNo, referenceId, createdBy, locality, customer, pickupAddress, receiverAddress, items",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "order",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchant_location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contact_person",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_address_lat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "customer_address_lon",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "is_pickup",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pickup_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pickup_address_lat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "pickup_address_lon",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "receiver_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "receiver_address_lat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "receiver_address_lon",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "receiver_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_customer_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "area",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "block",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "receiver_phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "receiver_postcode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "receiver_city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cod",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "total_amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "payee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_same_day_delivery",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "is_foc",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "deliver_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "deliver_on_time_from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deliver_on_time_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deliver_on_time_from_utc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deliver_on_time_to_utc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pickup_datetime_from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pickup_datetime_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "payment_term_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "route_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "is_update",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "product_items",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_group_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "is_prepaid",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer_type_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "600f69f5-4455-45a9-bf5d-3d971e640c51",
+          "name": "Cancel/delete the Order",
+          "request": {
+            "name": "Cancel/delete the Order",
+            "description": {
+              "content": "This call cancel/delete the Order",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "cancel",
+                "order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_no",
+                  "value": "<string>",
+                  "description": "Order tracking number (Optional if provided then order will be deleted)"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_id",
+                  "value": "<integer>",
+                  "description": "System order id"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e4c8d906-f170-446b-a28d-09d03011665f",
+              "name": "Cancel/Delete the Order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "cancel",
+                    "order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70e77c50-3f77-49be-a68d-443d9e980c23",
+          "name": "Edit Order",
+          "request": {
+            "name": "Edit Order",
+            "description": {
+              "content": "This call edits an existing order",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "order",
+                "edit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_id",
+                  "value": "<integer>",
+                  "description": "Order ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_no",
+                  "value": "<string>",
+                  "description": "Tracking Number (alternative to order_id)"
+                },
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "Reference ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_name",
+                  "value": "<string>",
+                  "description": "Customer Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_phone",
+                  "value": "<string>",
+                  "description": "Customer Phone"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_address",
+                  "value": "<string>",
+                  "description": "Customer Address"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_address_lat",
+                  "value": "<number>",
+                  "description": "Customer Latitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_address_lon",
+                  "value": "<number>",
+                  "description": "Customer Longitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "pickup_latitude",
+                  "value": "<number>",
+                  "description": "Pickup Latitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "pickup_longitude",
+                  "value": "<number>",
+                  "description": "Pickup Longitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_name",
+                  "value": "<string>",
+                  "description": "Receiver Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_phone",
+                  "value": "<string>",
+                  "description": "Receiver Phone"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_address",
+                  "value": "<string>",
+                  "description": "Receiver Address"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_latitude",
+                  "value": "<number>",
+                  "description": "Receiver Latitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "receiver_longitude",
+                  "value": "<number>",
+                  "description": "Receiver Longitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "cod",
+                  "value": "<number>",
+                  "description": "Cash on Delivery Amount"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Order Description"
+                },
+                {
+                  "disabled": false,
+                  "key": "deliver_on",
+                  "value": "<string>",
+                  "description": "Delivery Date (Format: YYYY-MM-DD)"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_items",
+                  "value": "<string>",
+                  "description": "Product Items in JSON format. Required format: [{\"externalProductCode\":\"xxx\",\"qty\":2,\"unitPrice\":10,\"weight\":1.5}] or [{\"product_name\":\"xxx\",\"qty\":2,\"product_base_price\":10,\"product_tax\":5,\"weight\":1.5,\"category_name\":\"Category\",\"brand_name\":\"Brand\",\"product_sku\":\"SKU123\"}]"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "655ee55e-82f9-49ed-9021-a9248a4b5e5b",
+              "name": "Returns the updated order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "order",
+                    "edit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "tracking_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_address_lat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "customer_address_lon",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "pickup_latitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "pickup_longitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "receiver_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "receiver_phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "receiver_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "receiver_latitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "receiver_longitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "cod",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deliver_on",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_items",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lastmile.milenow.com/index.php",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "63a8379d-be1f-4735-aa0f-b1236b684d90",
+    "name": "Api Documentation Aramex Order API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

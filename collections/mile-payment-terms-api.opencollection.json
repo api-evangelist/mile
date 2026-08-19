@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Payment Terms API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payment Terms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all payment terms for the authenticated user's company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/payment/terms",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              }
+            ]
+          },
+          "docs": "This call returns all payment terms available for the company"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

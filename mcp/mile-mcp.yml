@@ -2,10 +2,9 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: openapi/mile-partner-api-openapi-original.json
-note: >-
-  No official hosted/remote MCP server was found for Mile. This is a candidate tool list
-  derived one-to-one from the Mile Partner API operations, suitable for generating an MCP
-  server over the OpenAPI. Not an official Mile product.
+note: No official hosted/remote MCP server was found for Mile. This is a candidate tool list derived one-to-one
+  from the Mile Partner API operations, suitable for generating an MCP server over the OpenAPI. Not an
+  official Mile product.
 server:
   name: mile
   transport: http
@@ -92,3 +91,9 @@ tools:
 - name: list_webhooks
   description: List all webhooks for the company
   source_operation: openapi/mile-partner-api-openapi-original.json#get_app_apiv1_trackingapi_listwebhooks
+deployment:
+  mode: none
+  verified: derived
+  tools: 27
+  checked: '2026-08-12'
+  source: catalog MCP census

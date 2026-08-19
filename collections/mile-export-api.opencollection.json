@@ -1,0 +1,251 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Export API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Export",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Push the Order To external",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/orders/update/synced",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "orderIds",
+                "value": "",
+                "type": "query",
+                "description": "comma seperated values"
+              },
+              {
+                "name": "tracking_nos",
+                "value": "",
+                "type": "query",
+                "description": "The field is required. Max 50 tracking nos are allowed"
+              }
+            ]
+          },
+          "docs": "This call will update order synced of order"
+        },
+        {
+          "info": {
+            "name": "Push the Order To external",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/orders/update/synced",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "orderIds",
+                "value": "",
+                "type": "query",
+                "description": "comma seperated values"
+              },
+              {
+                "name": "tracking_nos",
+                "value": "",
+                "type": "query",
+                "description": "The field is required. Max 50 tracking nos are allowed"
+              }
+            ]
+          },
+          "docs": "This call will update order synced of order"
+        },
+        {
+          "info": {
+            "name": "Push the Order To external",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/orders/pull",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "date_from",
+                "value": "",
+                "type": "query",
+                "description": "Date From format like 2020-05-21"
+              },
+              {
+                "name": "date_to",
+                "value": "",
+                "type": "query",
+                "description": "Date To format like 2020-05-21"
+              },
+              {
+                "name": "include_synced",
+                "value": "",
+                "type": "query",
+                "description": "value = 0 means unsynced, value = 1 means synced"
+              }
+            ]
+          },
+          "docs": "This call Push the Order To external"
+        },
+        {
+          "info": {
+            "name": "Push the Order To external",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/orders/pull",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "date_from",
+                "value": "",
+                "type": "query",
+                "description": "Date From format like 2020-05-21"
+              },
+              {
+                "name": "date_to",
+                "value": "",
+                "type": "query",
+                "description": "Date To format like 2020-05-21"
+              },
+              {
+                "name": "include_synced",
+                "value": "",
+                "type": "query",
+                "description": "value = 0 means unsynced, value = 1 means synced"
+              }
+            ]
+          },
+          "docs": "This call Push the Order To external"
+        },
+        {
+          "info": {
+            "name": "Push the Order To external",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/external/push",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              }
+            ]
+          },
+          "docs": "This call Push the Order To external"
+        },
+        {
+          "info": {
+            "name": "get_app_apiv1_trackingapi_pullorderapi",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/track/orders/pull",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "date_from",
+                "value": "",
+                "type": "query",
+                "description": "Date From format like 2020-05-21"
+              },
+              {
+                "name": "date_to",
+                "value": "",
+                "type": "query",
+                "description": "Date To format like 2020-05-21"
+              },
+              {
+                "name": "include_synced",
+                "value": "",
+                "type": "query",
+                "description": "value = 0 means unsynced, value = 1 means synced"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_app_apiv1_trackingapi_pullorderapi",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/track/orders/pull",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "date_from",
+                "value": "",
+                "type": "query",
+                "description": "Date From format like 2020-05-21"
+              },
+              {
+                "name": "date_to",
+                "value": "",
+                "type": "query",
+                "description": "Date To format like 2020-05-21"
+              },
+              {
+                "name": "include_synced",
+                "value": "",
+                "type": "query",
+                "description": "value = 0 means unsynced, value = 1 means synced"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

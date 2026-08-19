@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Order Optimization API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Order Optimization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Webhook endpoint for receiving orders and creating optimized Orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/optimize-orders",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "orders",
+                "value": "",
+                "type": "query",
+                "description": "Orders JSON - Array of orders to optimize. Example: [{\"warehouse_id\": \"00\",\"deliver_on\": \"2026-01-22\",\"reference_id\": \"TEST-1735647600\",\"customer\": \"Mobi mariam\",\"phone\": \"123344566\",\"customer_address\": \"123 Test Street\",\"latitude\": 12.0000000000,\"longitude\": 12.0000000000,\"product_items\": [{\"product_id\": 123456,\"qty\": 10,\"unitPrice\": 5.50 }]}]"
+              }
+            ]
+          },
+          "docs": "This endpoint receives order data and creates optimized orders automatically"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

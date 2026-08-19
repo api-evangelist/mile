@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Promotion Bundle API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Promotion Bundle",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Promotion Bundle with multiple products",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/promotion/bundle/create",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "bundle_code",
+                "value": "",
+                "type": "query",
+                "description": "Bundle Code (Required)"
+              },
+              {
+                "name": "bundle_price",
+                "value": "",
+                "type": "query",
+                "description": "Bundle Price (Required)"
+              },
+              {
+                "name": "bundle_name",
+                "value": "",
+                "type": "query",
+                "description": "Bundle Name (Optional)"
+              },
+              {
+                "name": "product_items",
+                "value": "",
+                "type": "query",
+                "description": "Product Items in JSON format. Required format: [{\"external_code\":\"SKU123\",\"product_name\":\"iPhone 15\",\"quantity\":2}]. Either external_code or product_name is required along with quantity."
+              }
+            ]
+          },
+          "docs": "This call creates promotion bundle entries with the same bundle code for multiple products"
+        },
+        {
+          "info": {
+            "name": "Get Promotion Bundle details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/promotion/bundle/get",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "bundle_code",
+                "value": "",
+                "type": "query",
+                "description": "Bundle Code (Optional - use either bundle_code or bundle_name)"
+              },
+              {
+                "name": "bundle_name",
+                "value": "",
+                "type": "query",
+                "description": "Bundle Name (Optional - use either bundle_code or bundle_name)"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Search term for bundle name (Optional)"
+              }
+            ]
+          },
+          "docs": "This call retrieves promotion bundle entries by bundle code, name, or search term"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

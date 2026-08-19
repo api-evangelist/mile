@@ -1,0 +1,506 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Products API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Products",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns all shipment products",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/products",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "external_product_code",
+                "value": "",
+                "type": "query",
+                "description": "This is optional. If you pass external_product_code then only that product to this will return"
+              }
+            ]
+          },
+          "docs": "This call Returns all shipment products"
+        },
+        {
+          "info": {
+            "name": "Returns all brands and categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/categories-brands",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              }
+            ]
+          },
+          "docs": "This call Returns all brands and categories"
+        },
+        {
+          "info": {
+            "name": "This call will create brand and category",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/brand/category/create",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "brand_name",
+                "value": "",
+                "type": "query",
+                "description": "Brand Name"
+              },
+              {
+                "name": "category_name",
+                "value": "",
+                "type": "query",
+                "description": "Category Name"
+              }
+            ]
+          },
+          "docs": "This call will create brand and category"
+        },
+        {
+          "info": {
+            "name": "This call will create product",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/product/create",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Product Name"
+              },
+              {
+                "name": "sku",
+                "value": "",
+                "type": "query",
+                "description": "Product SKU"
+              },
+              {
+                "name": "category_id",
+                "value": "",
+                "type": "query",
+                "description": "Category Id"
+              },
+              {
+                "name": "brand_id",
+                "value": "",
+                "type": "query",
+                "description": "Brand Id"
+              },
+              {
+                "name": "in_stock",
+                "value": "",
+                "type": "query",
+                "description": "In Stock"
+              },
+              {
+                "name": "volume",
+                "value": "",
+                "type": "query",
+                "description": "Volume(cubic meter)"
+              },
+              {
+                "name": "weight",
+                "value": "",
+                "type": "query",
+                "description": "Weight (kg)"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Product description"
+              },
+              {
+                "name": "base_price",
+                "value": "",
+                "type": "query",
+                "description": "Product Base Price"
+              },
+              {
+                "name": "pallet_size",
+                "value": "",
+                "type": "query",
+                "description": "Product Pallet Size"
+              },
+              {
+                "name": "bar_code",
+                "value": "",
+                "type": "query",
+                "description": "Product Bar Code"
+              },
+              {
+                "name": "is_active",
+                "value": "",
+                "type": "query",
+                "description": "Product Active Status"
+              },
+              {
+                "name": "tax_percentage",
+                "value": "",
+                "type": "query",
+                "description": "Tax Percentage"
+              },
+              {
+                "name": "external_item_code",
+                "value": "",
+                "type": "query",
+                "description": "External Item Code"
+              },
+              {
+                "name": "promotion_amount",
+                "value": "",
+                "type": "query",
+                "description": "Promotion Amount (Optional)"
+              },
+              {
+                "name": "promotion_code",
+                "value": "",
+                "type": "query",
+                "description": "Promotion Code (Optional)"
+              }
+            ]
+          },
+          "docs": "This call will create product"
+        },
+        {
+          "info": {
+            "name": "This call will create product without brand and category Ids",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/product/brand-category/create",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Product Name"
+              },
+              {
+                "name": "sku",
+                "value": "",
+                "type": "query",
+                "description": "Product SKU"
+              },
+              {
+                "name": "category_name",
+                "value": "",
+                "type": "query",
+                "description": "Category Name"
+              },
+              {
+                "name": "brand_name",
+                "value": "",
+                "type": "query",
+                "description": "Brand Name"
+              },
+              {
+                "name": "in_stock",
+                "value": "",
+                "type": "query",
+                "description": "In Stock"
+              },
+              {
+                "name": "volume",
+                "value": "",
+                "type": "query",
+                "description": "Volume(cubic meter)"
+              },
+              {
+                "name": "weight",
+                "value": "",
+                "type": "query",
+                "description": "Weight (kg)"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Product description"
+              },
+              {
+                "name": "base_price",
+                "value": "",
+                "type": "query",
+                "description": "Product Base Price"
+              },
+              {
+                "name": "bar_code",
+                "value": "",
+                "type": "query",
+                "description": "Product Bar Code"
+              },
+              {
+                "name": "tax_percentage",
+                "value": "",
+                "type": "query",
+                "description": "Tax Percentage"
+              },
+              {
+                "name": "external_item_code",
+                "value": "",
+                "type": "query",
+                "description": "External Item Code"
+              },
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "query",
+                "description": "External Id"
+              }
+            ]
+          },
+          "docs": "This call will create product"
+        },
+        {
+          "info": {
+            "name": "This call will edit product",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/product/edit",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Product Id"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Product Name"
+              },
+              {
+                "name": "sku",
+                "value": "",
+                "type": "query",
+                "description": "Product SKU"
+              },
+              {
+                "name": "category_name",
+                "value": "",
+                "type": "query",
+                "description": "Category Name"
+              },
+              {
+                "name": "brand_name",
+                "value": "",
+                "type": "query",
+                "description": "Brand Name"
+              },
+              {
+                "name": "in_stock",
+                "value": "",
+                "type": "query",
+                "description": "In Stock"
+              },
+              {
+                "name": "volume",
+                "value": "",
+                "type": "query",
+                "description": "Volume(cubic meter)"
+              },
+              {
+                "name": "weight",
+                "value": "",
+                "type": "query",
+                "description": "Weight (kg)"
+              },
+              {
+                "name": "pallet_size",
+                "value": "",
+                "type": "query",
+                "description": "Pallet Size"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Product description"
+              },
+              {
+                "name": "base_price",
+                "value": "",
+                "type": "query",
+                "description": "Product Base Price"
+              },
+              {
+                "name": "is_active",
+                "value": "",
+                "type": "query",
+                "description": "Product Active Status"
+              },
+              {
+                "name": "bar_code",
+                "value": "",
+                "type": "query",
+                "description": "Product Bar Code"
+              },
+              {
+                "name": "tax_percentage",
+                "value": "",
+                "type": "query",
+                "description": "Tax Percentage"
+              },
+              {
+                "name": "external_item_code",
+                "value": "",
+                "type": "query",
+                "description": "External Item Code"
+              },
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "query",
+                "description": "External Id"
+              },
+              {
+                "name": "promotion_amount",
+                "value": "",
+                "type": "query",
+                "description": "Promotion Amount (Optional)"
+              },
+              {
+                "name": "promotion_code",
+                "value": "",
+                "type": "query",
+                "description": "Promotion Code (Optional)"
+              }
+            ]
+          },
+          "docs": "This call will edit product"
+        },
+        {
+          "info": {
+            "name": "Edit Brand",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/brand/edit",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Brand ID"
+              },
+              {
+                "name": "brand_name",
+                "value": "",
+                "type": "query",
+                "description": "Brand Name"
+              },
+              {
+                "name": "category_id",
+                "value": "",
+                "type": "query",
+                "description": "Category ID"
+              }
+            ]
+          },
+          "docs": "This call edits an existing brand"
+        },
+        {
+          "info": {
+            "name": "Edit Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/category/edit",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Category ID"
+              },
+              {
+                "name": "category_name",
+                "value": "",
+                "type": "query",
+                "description": "Category Name"
+              }
+            ]
+          },
+          "docs": "This call edits an existing category"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

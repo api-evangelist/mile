@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Aramex",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Aramex shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/aramex/order",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              }
+            ]
+          },
+          "docs": "This call creates a shipment on aramex"
+        },
+        {
+          "info": {
+            "name": "Aramex get rate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/aramex/quote",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              }
+            ]
+          },
+          "docs": "This call gets rate from aramex"
+        },
+        {
+          "info": {
+            "name": "Aramex get rate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/aramex/quote",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              }
+            ]
+          },
+          "docs": "This call gets rate from aramex"
+        },
+        {
+          "info": {
+            "name": "Aramex Track Shipments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/aramex/trackshipments",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              }
+            ]
+          },
+          "docs": "This call gets rate from aramex"
+        },
+        {
+          "info": {
+            "name": "Aramex Track Shipments",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/aramex/trackshipments",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              }
+            ]
+          },
+          "docs": "This call gets rate from aramex"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

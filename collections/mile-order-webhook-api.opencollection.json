@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Order Webhook API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Order Webhook",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Configure Order Status Webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/webhook/order-status/configure",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token (can be in query, body, or Authorization header)"
+              },
+              {
+                "name": "webhook_url",
+                "value": "",
+                "type": "query",
+                "description": "Your webhook URL to receive order status updates"
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "Enable/disable order status webhook (1=enabled, 0=disabled)"
+              }
+            ]
+          },
+          "docs": "Set your webhook URL to receive order status update notifications when order status changes"
+        },
+        {
+          "info": {
+            "name": "Configure Order Creation Webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/order-creation/configure",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token (can be in query, body, or Authorization header)"
+              },
+              {
+                "name": "webhook_url",
+                "value": "",
+                "type": "query",
+                "description": "Your webhook URL to receive new order data"
+              }
+            ]
+          },
+          "docs": "Set your webhook URL to receive new order data when orders are created"
+        },
+        {
+          "info": {
+            "name": "Send Order to External Platform - Dynamic ERP Integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/send-order",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query",
+                "description": "Order ID to send to external platform"
+              },
+              {
+                "name": "webhook_url",
+                "value": "",
+                "type": "query",
+                "description": "External platform webhook URL"
+              }
+            ]
+          },
+          "docs": "This endpoint sends order data to external platform via webhook.\nFor companies with ERP integration, it routes through the dynamic ERP system."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,715 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Order API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Order",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return order items",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/order/item/return",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query",
+                "description": "Order id"
+              },
+              {
+                "name": "return_latitude",
+                "value": "",
+                "type": "query",
+                "description": "Return Latitude"
+              },
+              {
+                "name": "return_longitude",
+                "value": "",
+                "type": "query",
+                "description": "Return Longitude"
+              },
+              {
+                "name": "return_address",
+                "value": "",
+                "type": "query",
+                "description": "Return Address"
+              },
+              {
+                "name": "items",
+                "value": "",
+                "type": "query",
+                "description": "Order Items format should be in json like [{\"product_id\":23,\"quantity\":1}]"
+              }
+            ]
+          },
+          "docs": "This call returns order items"
+        },
+        {
+          "info": {
+            "name": "Takes tracking_no and returns the order status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/track/order",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "tracking_no",
+                "value": "",
+                "type": "query",
+                "description": "The field is depreciated. Please use tracking_nos"
+              },
+              {
+                "name": "tracking_nos",
+                "value": "",
+                "type": "query",
+                "description": "The field is required. Max 50 tracking nos are allowed"
+              },
+              {
+                "name": "date_from",
+                "value": "",
+                "type": "query",
+                "description": "The field is optional"
+              },
+              {
+                "name": "date_to",
+                "value": "",
+                "type": "query",
+                "description": "The field is optional"
+              }
+            ]
+          },
+          "docs": "This call Takes tracking_no and returns the order status"
+        },
+        {
+          "info": {
+            "name": "Takes tracking_no and returns the order status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/track/order",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "tracking_no",
+                "value": "",
+                "type": "query",
+                "description": "The field is depreciated. Please use tracking_nos"
+              },
+              {
+                "name": "tracking_nos",
+                "value": "",
+                "type": "query",
+                "description": "The field is required. Max 50 tracking nos are allowed"
+              },
+              {
+                "name": "date_from",
+                "value": "",
+                "type": "query",
+                "description": "The field is optional"
+              },
+              {
+                "name": "date_to",
+                "value": "",
+                "type": "query",
+                "description": "The field is optional"
+              }
+            ]
+          },
+          "docs": "This call Takes tracking_no and returns the order status"
+        },
+        {
+          "info": {
+            "name": "Import Order.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/order/import",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "tracking_no",
+                "value": "",
+                "type": "query",
+                "description": "Tracking no"
+              },
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query",
+                "description": "Reference id"
+              },
+              {
+                "name": "agent",
+                "value": "",
+                "type": "query",
+                "description": "Agent Name"
+              },
+              {
+                "name": "merchant_name",
+                "value": "",
+                "type": "query",
+                "description": "Merchant Id/Name"
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query",
+                "description": "Customer Name"
+              },
+              {
+                "name": "contact_person",
+                "value": "",
+                "type": "query",
+                "description": "Contact Person Name"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "Customer phone"
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "City"
+              },
+              {
+                "name": "customer_address",
+                "value": "",
+                "type": "query",
+                "description": "Customer Address"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Order Description"
+              },
+              {
+                "name": "Deliver_On",
+                "value": "",
+                "type": "query",
+                "description": "Order Deliver DateTime Format will be 2020-06-24"
+              },
+              {
+                "name": "product_items",
+                "value": "",
+                "type": "query",
+                "description": "Product Items in json format e.g [{\"productName\": \"Green Coffee\",\"qty\": 2,\"unitPrice\": 10}]"
+              }
+            ]
+          },
+          "docs": "This call imports orders with all required details"
+        },
+        {
+          "info": {
+            "name": "Create Order Optional Merchant Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/order/create",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token (Required)"
+              },
+              {
+                "name": "tracking_no",
+                "value": "",
+                "type": "query",
+                "description": "Tracking no (Optional)"
+              },
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query",
+                "description": "Reference id (Optional)"
+              },
+              {
+                "name": "agent",
+                "value": "",
+                "type": "query",
+                "description": "Agent Name (Optional)"
+              },
+              {
+                "name": "merchant_name",
+                "value": "",
+                "type": "query",
+                "description": "Merchant Id/Name (Optional)"
+              },
+              {
+                "name": "merchant_location_id",
+                "value": "",
+                "type": "query",
+                "description": "Branch/Merchant Location Id (Optional)"
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query",
+                "description": "Customer Name (Required)"
+              },
+              {
+                "name": "contact_person",
+                "value": "",
+                "type": "query",
+                "description": "Contact Person Name (Optional)"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "Customer phone (Required)"
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "City (Required)"
+              },
+              {
+                "name": "customer_address",
+                "value": "",
+                "type": "query",
+                "description": "Customer Address (Required if lat, long not provided)"
+              },
+              {
+                "name": "customer_address_lat",
+                "value": "",
+                "type": "query",
+                "description": "Customer Latitude (Optional)"
+              },
+              {
+                "name": "customer_address_lon",
+                "value": "",
+                "type": "query",
+                "description": "Customer Longitude (Optional)"
+              },
+              {
+                "name": "is_pickup",
+                "value": "",
+                "type": "query",
+                "description": "is Pickup possible values are 1,0 (Required)"
+              },
+              {
+                "name": "pickup_address",
+                "value": "",
+                "type": "query",
+                "description": "Pickup Address (Required if is_pickup=1)"
+              },
+              {
+                "name": "pickup_address_lat",
+                "value": "",
+                "type": "query",
+                "description": "Pickup Latitude (Optional)"
+              },
+              {
+                "name": "pickup_address_lon",
+                "value": "",
+                "type": "query",
+                "description": "Pickup Longitude (Optional)"
+              },
+              {
+                "name": "receiver_address",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Address (Required if is_pickup=1)"
+              },
+              {
+                "name": "receiver_address_lat",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Latitude (Optional)"
+              },
+              {
+                "name": "receiver_address_lon",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Longitude (Optional)"
+              },
+              {
+                "name": "receiver_name",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Name (Required if is_pickup=1)"
+              },
+              {
+                "name": "external_customer_code",
+                "value": "",
+                "type": "query",
+                "description": "Add Customer code if you make new customer or you enter the route id."
+              },
+              {
+                "name": "area",
+                "value": "",
+                "type": "query",
+                "description": "Add area"
+              },
+              {
+                "name": "block",
+                "value": "",
+                "type": "query",
+                "description": "Add block"
+              },
+              {
+                "name": "address_id",
+                "value": "",
+                "type": "query",
+                "description": "Add address Id if you make new customer"
+              },
+              {
+                "name": "receiver_phone",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Phone (Required if is_pickup=1)"
+              },
+              {
+                "name": "receiver_postcode",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Postcode (Optional)"
+              },
+              {
+                "name": "receiver_city",
+                "value": "",
+                "type": "query",
+                "description": "Receiver city (Optional)"
+              },
+              {
+                "name": "cod",
+                "value": "",
+                "type": "query",
+                "description": "Cash on Delivery Amount (Optional)"
+              },
+              {
+                "name": "total_amount",
+                "value": "",
+                "type": "query",
+                "description": "Total Amount (Optional)"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Order Description/Notes for Driver (Optional)"
+              },
+              {
+                "name": "payee",
+                "value": "",
+                "type": "query",
+                "description": "Payee possible values are S,R (Required) S means sender will pay and R means Receiver will pay"
+              },
+              {
+                "name": "is_same_day_delivery",
+                "value": "",
+                "type": "query",
+                "description": "is same day delivery possible values are 1,0 (Required)"
+              },
+              {
+                "name": "is_foc",
+                "value": "",
+                "type": "query",
+                "description": "is free of charge possible values are 1,0 (Required)"
+              },
+              {
+                "name": "deliver_on",
+                "value": "",
+                "type": "query",
+                "description": "Order Deliver DateTime Format will be 2020-06-24 (Required)"
+              },
+              {
+                "name": "deliver_on_time_from",
+                "value": "",
+                "type": "query",
+                "description": "Order Deliver Time From Format will be hh:mm (24 hours)"
+              },
+              {
+                "name": "deliver_on_time_to",
+                "value": "",
+                "type": "query",
+                "description": "Order Deliver Time To Format will be hh:mm (24 hours)"
+              },
+              {
+                "name": "deliver_on_time_from_utc",
+                "value": "",
+                "type": "query",
+                "description": "Order Deliver Time From Format will be UTC"
+              },
+              {
+                "name": "deliver_on_time_to_utc",
+                "value": "",
+                "type": "query",
+                "description": "Order Deliver Time To Format will be UTC"
+              },
+              {
+                "name": "pickup_datetime_from",
+                "value": "",
+                "type": "query",
+                "description": "Order Pickup Date Time From Format will be 2021-12-25 hh:mm (24 hours)"
+              },
+              {
+                "name": "pickup_datetime_to",
+                "value": "",
+                "type": "query",
+                "description": "Order Pickup Date Time To Format will be 2021-12-25 hh:mm (24 hours)"
+              },
+              {
+                "name": "payment_term_id",
+                "value": "",
+                "type": "query",
+                "description": "Use Payment term api to get payment term id."
+              },
+              {
+                "name": "route_id",
+                "value": "",
+                "type": "query",
+                "description": "Use routes api to get route id."
+              },
+              {
+                "name": "is_update",
+                "value": "",
+                "type": "query",
+                "description": "is Update possible values are 1,0. If value is 1 then tracking_no will be mandatory"
+              },
+              {
+                "name": "product_items",
+                "value": "",
+                "type": "query",
+                "description": "Product Items in JSON format. Required format: [{\"externalProductCode\":\"xxx\",\"qty\":2,\"unitPrice\":10}] or [{\"product_name\":\"xxx\",\"qty\":2,\"product_base_price\":10,\"product_tax\":5}]"
+              },
+              {
+                "name": "customer_group_id",
+                "value": "",
+                "type": "query",
+                "description": "Customer Group ID (Optional) 1:Direct, 2:Indirect"
+              },
+              {
+                "name": "is_prepaid",
+                "value": "",
+                "type": "query",
+                "description": "is Prepaid possible values are 1,0"
+              },
+              {
+                "name": "customer_type_id",
+                "value": "",
+                "type": "query",
+                "description": "Customer Type:\n        1 = Individual Customer,\n        2 = Corporate Customer,\n        3 = Watchman,\n        4 = Supermarket,\n        5 = Abraaj FOC,\n        6 = Co-Packing,\n        7 = Co-operatives,\n        9 = E-commerce,\n        10 = Horeca,\n        12 = Mabara,\n        13 = Modern Trade,\n        14 = Mosques,\n        15 = Staff account"
+              }
+            ]
+          },
+          "docs": "Create Order Optional Merchant Id"
+        },
+        {
+          "info": {
+            "name": "Cancel/delete the Order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/cancel/order",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "tracking_no",
+                "value": "",
+                "type": "query",
+                "description": "Order tracking number (Optional if provided then order will be deleted)"
+              },
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query",
+                "description": "System order id"
+              }
+            ]
+          },
+          "docs": "This call cancel/delete the Order"
+        },
+        {
+          "info": {
+            "name": "Edit Order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/order/edit",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query",
+                "description": "Order ID"
+              },
+              {
+                "name": "tracking_no",
+                "value": "",
+                "type": "query",
+                "description": "Tracking Number (alternative to order_id)"
+              },
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query",
+                "description": "Reference ID"
+              },
+              {
+                "name": "customer_name",
+                "value": "",
+                "type": "query",
+                "description": "Customer Name"
+              },
+              {
+                "name": "customer_phone",
+                "value": "",
+                "type": "query",
+                "description": "Customer Phone"
+              },
+              {
+                "name": "customer_address",
+                "value": "",
+                "type": "query",
+                "description": "Customer Address"
+              },
+              {
+                "name": "customer_address_lat",
+                "value": "",
+                "type": "query",
+                "description": "Customer Latitude"
+              },
+              {
+                "name": "customer_address_lon",
+                "value": "",
+                "type": "query",
+                "description": "Customer Longitude"
+              },
+              {
+                "name": "pickup_latitude",
+                "value": "",
+                "type": "query",
+                "description": "Pickup Latitude"
+              },
+              {
+                "name": "pickup_longitude",
+                "value": "",
+                "type": "query",
+                "description": "Pickup Longitude"
+              },
+              {
+                "name": "receiver_name",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Name"
+              },
+              {
+                "name": "receiver_phone",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Phone"
+              },
+              {
+                "name": "receiver_address",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Address"
+              },
+              {
+                "name": "receiver_latitude",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Latitude"
+              },
+              {
+                "name": "receiver_longitude",
+                "value": "",
+                "type": "query",
+                "description": "Receiver Longitude"
+              },
+              {
+                "name": "cod",
+                "value": "",
+                "type": "query",
+                "description": "Cash on Delivery Amount"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Order Description"
+              },
+              {
+                "name": "deliver_on",
+                "value": "",
+                "type": "query",
+                "description": "Delivery Date (Format: YYYY-MM-DD)"
+              },
+              {
+                "name": "product_items",
+                "value": "",
+                "type": "query",
+                "description": "Product Items in JSON format. Required format: [{\"externalProductCode\":\"xxx\",\"qty\":2,\"unitPrice\":10,\"weight\":1.5}] or [{\"product_name\":\"xxx\",\"qty\":2,\"product_base_price\":10,\"product_tax\":5,\"weight\":1.5,\"category_name\":\"Category\",\"brand_name\":\"Brand\",\"product_sku\":\"SKU123\"}]"
+              }
+            ]
+          },
+          "docs": "This call edits an existing order"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

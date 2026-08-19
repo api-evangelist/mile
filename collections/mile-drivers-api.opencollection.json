@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Drivers API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Drivers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all drivers for the company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/drivers",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "driver_id",
+                "value": "",
+                "type": "query",
+                "description": "Optional: Filter by specific driver ID"
+              }
+            ]
+          },
+          "docs": "This call returns all drivers (users with user_role = 3) associated with the authenticated company"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

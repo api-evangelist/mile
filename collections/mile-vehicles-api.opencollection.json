@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Vehicles API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vehicles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns all vehicles registered for the company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/vehicles",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "query",
+                "description": "Optional: Filter by specific vehicle ID"
+              },
+              {
+                "name": "vehicle_number",
+                "value": "",
+                "type": "query",
+                "description": "Optional: Filter by vehicle number/plate"
+              }
+            ]
+          },
+          "docs": "This call Returns all vehicles with their details including vehicle type, capacity, dimensions, etc."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,161 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Webhooks API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Configure webhook settings for loadout pallet push notifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/webhook/inventory/transfer/configure",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "webhook_url",
+                "value": "",
+                "type": "query",
+                "description": "Webhook URL to receive loadout notifications"
+              },
+              {
+                "name": "access_token_webhook",
+                "value": "",
+                "type": "query",
+                "description": "Bearer token for webhook authentication (optional)"
+              }
+            ]
+          },
+          "docs": "This endpoint allows you to configure webhook URL and authentication for receiving loadout notifications"
+        },
+        {
+          "info": {
+            "name": "Test loadout webhook endpoint connectivity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/webhook/loadout/test",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "webhook_url",
+                "value": "",
+                "type": "query",
+                "description": "Optional: Webhook URL to test (if not provided, uses configured URL)"
+              },
+              {
+                "name": "access_token_webhook",
+                "value": "",
+                "type": "query",
+                "description": "Optional: Bearer token for webhook authentication"
+              },
+              {
+                "name": "loadout_id",
+                "value": "",
+                "type": "query",
+                "description": "Optional: Loadout ID to use real data for testing (if not provided, uses sample data)"
+              }
+            ]
+          },
+          "docs": "This endpoint sends a test payload to your configured webhook URL to verify connectivity"
+        },
+        {
+          "info": {
+            "name": "Get current webhook configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/webhook/info",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              }
+            ]
+          },
+          "docs": "This endpoint returns the current webhook configuration for loadout notifications"
+        },
+        {
+          "info": {
+            "name": "Test Webhook for Order Status Updates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/webhook/test",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "webhook_url",
+                "value": "",
+                "type": "query",
+                "description": "Your webhook URL (optional - for testing)"
+              },
+              {
+                "name": "event_type",
+                "value": "",
+                "type": "query",
+                "description": "Event type to test (order_created, settlement_report)"
+              }
+            ]
+          },
+          "docs": "This endpoint sends DUMMY/SAMPLE JSON data to your webhook URL for testing purposes. No real order data is used."
+        },
+        {
+          "info": {
+            "name": "List All Webhooks for Company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/webhook/list",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              }
+            ]
+          },
+          "docs": "This endpoint returns all configured webhooks for the company"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

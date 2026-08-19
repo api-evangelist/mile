@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Login API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Login",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns the server is active or not",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/ping/api"
+          },
+          "docs": "This call returns the server is active or not"
+        },
+        {
+          "info": {
+            "name": "Takes username and password and returns the access token.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/login",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query",
+                "description": "The field used to get username"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "The field used to get password"
+              }
+            ]
+          },
+          "docs": "This call takes username and password and returns the access token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

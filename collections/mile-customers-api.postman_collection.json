@@ -1,0 +1,655 @@
+{
+  "item": [
+    {
+      "id": "d2d7a336-9a19-47c0-b97d-758f6098e069",
+      "name": "Customers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "17444a65-ccf2-4866-a8c9-9870bed4b768",
+          "name": "Create or update customer",
+          "request": {
+            "name": "Create or update customer",
+            "description": {
+              "content": "This call Create or update customer based on is_update parameter",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "create",
+                "customer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_update",
+                  "value": "<integer>",
+                  "description": "Set to 1 for update existing customer, 0 for create new customer. Default is 0"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_id",
+                  "value": "<integer>",
+                  "description": "Customer ID (required when is_update=1)"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_name",
+                  "value": "<string>",
+                  "description": "Customer Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_phone",
+                  "value": "<string>",
+                  "description": "Customer Phone"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_receiver",
+                  "value": "<string>",
+                  "description": "Is Receiver (1 or 0)"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_home_address",
+                  "value": "<string>",
+                  "description": "Customer Home Address"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_home_latitude",
+                  "value": "<number>",
+                  "description": "Customer Home Latitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_home_longitude",
+                  "value": "<number>",
+                  "description": "Customer Home Longitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_work_address",
+                  "value": "<string>",
+                  "description": "Customer Work Address"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_work_latitude",
+                  "value": "<number>",
+                  "description": "Customer Work Latitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_work_longitude",
+                  "value": "<number>",
+                  "description": "Customer Work Longitude"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_default_address",
+                  "value": "<string>",
+                  "description": "possible values are home,work. Default value is home"
+                },
+                {
+                  "disabled": false,
+                  "key": "block",
+                  "value": "<string>",
+                  "description": "Customer Block"
+                },
+                {
+                  "disabled": false,
+                  "key": "area",
+                  "value": "<string>",
+                  "description": "Customer Area"
+                },
+                {
+                  "disabled": false,
+                  "key": "street",
+                  "value": "<string>",
+                  "description": "Customer Street"
+                },
+                {
+                  "disabled": false,
+                  "key": "building",
+                  "value": "<string>",
+                  "description": "Customer Building"
+                },
+                {
+                  "disabled": false,
+                  "key": "floor",
+                  "value": "<string>",
+                  "description": "Customer Floor"
+                },
+                {
+                  "disabled": false,
+                  "key": "apartment",
+                  "value": "<string>",
+                  "description": "Customer Apartment"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_customer_code",
+                  "value": "<string>",
+                  "description": "External Customer Code/Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "address_id",
+                  "value": "<string>",
+                  "description": "Address Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_group_id",
+                  "value": "<integer>",
+                  "description": "Customer Group ID (Optional) 1:Direct, 2:Indirect"
+                },
+                {
+                  "disabled": false,
+                  "key": "route_id",
+                  "value": "<integer>",
+                  "description": "Route ID (Optional) - Highest priority for route assignment. If provided, customer will be assigned to this route by ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "route_name",
+                  "value": "<string>",
+                  "description": "Route Name (Optional) - Second priority. If route_id not provided, customer will be assigned to this route by name"
+                },
+                {
+                  "disabled": false,
+                  "key": "parent_id",
+                  "value": "<string>",
+                  "description": "Parent Customer ID (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "parent_customer_code",
+                  "value": "<string>",
+                  "description": "Parent Customer Code (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "parent_address_id",
+                  "value": "<string>",
+                  "description": "Parent Address Id (Optional)"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_type_id",
+                  "value": "<integer>",
+                  "description": "Customer Type:\n        1 = Individual Customer,\n        2 = Corporate Customer,\n        3 = Watchman,\n        4 = Supermarket,\n        5 = Abraaj FOC,\n        6 = Co-Packing,\n        7 = Co-operatives,\n        9 = E-commerce,\n        10 = Horeca,\n        12 = Mabara,\n        13 = Modern Trade,\n        14 = Mosques,\n        15 = Staff account"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f28bf73c-bf78-4bbf-aaf7-8bac6e5c09f6",
+              "name": "Returns the customer object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "create",
+                    "customer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_update",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_receiver",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_home_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_home_latitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "customer_home_longitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "customer_work_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_work_latitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "customer_work_longitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "customer_default_address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "block",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "area",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "street",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "building",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "floor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apartment",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_customer_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_group_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "route_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "route_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parent_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parent_customer_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parent_address_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_type_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e420c010-a804-45cf-a65a-c2f6b790aad3",
+          "name": "This call is to search customers",
+          "request": {
+            "name": "This call is to search customers",
+            "description": {
+              "content": "This call is to search customers",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "customers",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone",
+                  "value": "<string>",
+                  "description": "Max 25 phone nos are allowed"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone",
+                  "value": "<string>",
+                  "description": "Max 25 phone nos are allowed"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_code",
+                  "value": "<string>",
+                  "description": "SAP external code(s)"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_code",
+                  "value": "<string>",
+                  "description": "SAP external code(s)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6cec360-0b0b-4307-843f-869a3c0c270c",
+              "name": "This call is to search customers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "customers",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6eec73f9-a4ed-4ea6-8aa8-b9bbda30abcf",
+          "name": "This call is to search customers",
+          "request": {
+            "name": "This call is to search customers",
+            "description": {
+              "content": "This call is to search customers",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "partners",
+                "customers",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "access_token",
+                  "value": "<string>",
+                  "description": "Access Token"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone",
+                  "value": "<string>",
+                  "description": "Max 25 phone nos are allowed"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone",
+                  "value": "<string>",
+                  "description": "Max 25 phone nos are allowed"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_code",
+                  "value": "<string>",
+                  "description": "SAP external code(s)"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_code",
+                  "value": "<string>",
+                  "description": "SAP external code(s)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "09a4556c-510d-4d4e-8dc9-8a20f4eae14d",
+              "name": "This call is to search customers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "partners",
+                    "customers",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "access_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lastmile.milenow.com/index.php",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "70ea8741-63e2-4d58-8965-c1c537941d1f",
+    "name": "Api Documentation Aramex Customers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Aramex Customers API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Customers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create or update customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/create/customer",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "is_update",
+                "value": "",
+                "type": "query",
+                "description": "Set to 1 for update existing customer, 0 for create new customer. Default is 0"
+              },
+              {
+                "name": "customer_id",
+                "value": "",
+                "type": "query",
+                "description": "Customer ID (required when is_update=1)"
+              },
+              {
+                "name": "customer_name",
+                "value": "",
+                "type": "query",
+                "description": "Customer Name"
+              },
+              {
+                "name": "customer_phone",
+                "value": "",
+                "type": "query",
+                "description": "Customer Phone"
+              },
+              {
+                "name": "is_receiver",
+                "value": "",
+                "type": "query",
+                "description": "Is Receiver (1 or 0)"
+              },
+              {
+                "name": "customer_home_address",
+                "value": "",
+                "type": "query",
+                "description": "Customer Home Address"
+              },
+              {
+                "name": "customer_home_latitude",
+                "value": "",
+                "type": "query",
+                "description": "Customer Home Latitude"
+              },
+              {
+                "name": "customer_home_longitude",
+                "value": "",
+                "type": "query",
+                "description": "Customer Home Longitude"
+              },
+              {
+                "name": "customer_work_address",
+                "value": "",
+                "type": "query",
+                "description": "Customer Work Address"
+              },
+              {
+                "name": "customer_work_latitude",
+                "value": "",
+                "type": "query",
+                "description": "Customer Work Latitude"
+              },
+              {
+                "name": "customer_work_longitude",
+                "value": "",
+                "type": "query",
+                "description": "Customer Work Longitude"
+              },
+              {
+                "name": "customer_default_address",
+                "value": "",
+                "type": "query",
+                "description": "possible values are home,work. Default value is home"
+              },
+              {
+                "name": "block",
+                "value": "",
+                "type": "query",
+                "description": "Customer Block"
+              },
+              {
+                "name": "area",
+                "value": "",
+                "type": "query",
+                "description": "Customer Area"
+              },
+              {
+                "name": "street",
+                "value": "",
+                "type": "query",
+                "description": "Customer Street"
+              },
+              {
+                "name": "building",
+                "value": "",
+                "type": "query",
+                "description": "Customer Building"
+              },
+              {
+                "name": "floor",
+                "value": "",
+                "type": "query",
+                "description": "Customer Floor"
+              },
+              {
+                "name": "apartment",
+                "value": "",
+                "type": "query",
+                "description": "Customer Apartment"
+              },
+              {
+                "name": "external_customer_code",
+                "value": "",
+                "type": "query",
+                "description": "External Customer Code/Id"
+              },
+              {
+                "name": "address_id",
+                "value": "",
+                "type": "query",
+                "description": "Address Id"
+              },
+              {
+                "name": "customer_group_id",
+                "value": "",
+                "type": "query",
+                "description": "Customer Group ID (Optional) 1:Direct, 2:Indirect"
+              },
+              {
+                "name": "route_id",
+                "value": "",
+                "type": "query",
+                "description": "Route ID (Optional) - Highest priority for route assignment. If provided, customer will be assigned to this route by ID"
+              },
+              {
+                "name": "route_name",
+                "value": "",
+                "type": "query",
+                "description": "Route Name (Optional) - Second priority. If route_id not provided, customer will be assigned to this route by name"
+              },
+              {
+                "name": "parent_id",
+                "value": "",
+                "type": "query",
+                "description": "Parent Customer ID (Optional)"
+              },
+              {
+                "name": "parent_customer_code",
+                "value": "",
+                "type": "query",
+                "description": "Parent Customer Code (Optional)"
+              },
+              {
+                "name": "parent_address_id",
+                "value": "",
+                "type": "query",
+                "description": "Parent Address Id (Optional)"
+              },
+              {
+                "name": "customer_type_id",
+                "value": "",
+                "type": "query",
+                "description": "Customer Type:\n        1 = Individual Customer,\n        2 = Corporate Customer,\n        3 = Watchman,\n        4 = Supermarket,\n        5 = Abraaj FOC,\n        6 = Co-Packing,\n        7 = Co-operatives,\n        9 = E-commerce,\n        10 = Horeca,\n        12 = Mabara,\n        13 = Modern Trade,\n        14 = Mosques,\n        15 = Staff account"
+              }
+            ]
+          },
+          "docs": "This call Create or update customer based on is_update parameter"
+        },
+        {
+          "info": {
+            "name": "This call is to search customers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/customers/search",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "Max 25 phone nos are allowed"
+              },
+              {
+                "name": "external_code",
+                "value": "",
+                "type": "query",
+                "description": "SAP external code(s)"
+              }
+            ]
+          },
+          "docs": "This call is to search customers"
+        },
+        {
+          "info": {
+            "name": "This call is to search customers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://lastmile.milenow.com/index.php/api/v1/partners/customers/search",
+            "params": [
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Access Token"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "Max 25 phone nos are allowed"
+              },
+              {
+                "name": "external_code",
+                "value": "",
+                "type": "query",
+                "description": "SAP external code(s)"
+              }
+            ]
+          },
+          "docs": "This call is to search customers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
