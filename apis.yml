@@ -41,6 +41,18 @@ tags:
 - Transportation Management
 - Fulfillment
 - Shipping
+- Webhook
+- Route Optimization
+tags_raw:
+- Company
+- Logistics
+- Supply Chain
+- Last Mile Delivery
+- Order Management
+- Warehouse Management
+- Transportation Management
+- Fulfillment
+- Shipping
 - Webhooks
 - Route Optimization
 apis:
@@ -205,6 +217,8 @@ apis:
   humanURL: https://lastmile.milenow.com/partner/api/doc
   baseURL: https://lastmile.milenow.com/index.php
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
@@ -290,6 +304,8 @@ apis:
   humanURL: https://lastmile.milenow.com/partner/api/doc
   baseURL: https://lastmile.milenow.com/index.php
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
