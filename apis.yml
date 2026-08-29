@@ -9,6 +9,18 @@ description: Mile is an AI-native supply chain execution platform for brands and
   orders, Aramex shipping, order optimization, and configurable webhooks for order-status,
   order-creation, settlement, and inventory-transfer events.
 url: https://raw.githubusercontent.com/api-evangelist/mile/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
