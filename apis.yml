@@ -332,6 +332,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/mile-capability-edges.yml
+  name: Mile Business Capability Map
 - type: Website
   url: https://milenow.com
 - type: DeveloperPortal
