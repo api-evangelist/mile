@@ -11,6 +11,10 @@ provenance:
   grounding: every price_text was found verbatim in the fetched page text
 audience: business-product
 pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: keyword-prefilter
+  read: '2026-09-20'
 published: false
 note: No numeric price is published on the pricing page; Pricing page loads with headings ('Simple Pricing
   to get You Started', Quarterly/Annually toggle) but no numeric prices or plan names appear in the visible
