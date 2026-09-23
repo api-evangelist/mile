@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Api Documentation Aramex Export API
+  title: Documentation Export API
   description: Api Documentation
   version: 1.0.0
 servers:
@@ -187,6 +187,8 @@ paths:
       responses:
         '200':
           description: Get All Orders in date range
+      summary: Get app apiv1 trackingapi pullorderapi
+      x-summary-source: derived
     post:
       tags:
       - Export
@@ -220,6 +222,8 @@ paths:
       responses:
         '200':
           description: Get All Orders in date range
+      summary: Post app apiv1 trackingapi pullorderapi
+      x-summary-source: derived
 components:
   securitySchemes:
     Bearer:

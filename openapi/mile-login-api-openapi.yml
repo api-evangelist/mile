@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Api Documentation Aramex Login API
+  title: Documentation Login API
   description: Api Documentation
   version: 1.0.0
 servers:
@@ -25,7 +25,7 @@ paths:
     post:
       tags:
       - Login
-      summary: Takes username and password and returns the access token.
+      summary: Takes username and password and returns the access token
       description: This call takes username and password and returns the access token
       operationId: post_app_apiv1_trackingapi_index
       parameters:

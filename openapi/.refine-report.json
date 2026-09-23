@@ -1,24 +1,7 @@
 {
   "provider": "mile",
   "sources": [
-    "mile-aramex-api-openapi.yml",
-    "mile-customers-api-openapi.yml",
-    "mile-debug-api-openapi.yml",
-    "mile-drivers-api-openapi.yml",
-    "mile-export-api-openapi.yml",
-    "mile-login-api-openapi.yml",
-    "mile-order-api-openapi.yml",
-    "mile-order-optimization-api-openapi.yml",
-    "mile-order-webhook-api-openapi.yml",
-    "mile-order-with-dynamic-merchant-api-openapi.yml",
-    "mile-payment-terms-api-openapi.yml",
-    "mile-products-api-openapi.yml",
-    "mile-promotion-bundle-api-openapi.yml",
-    "mile-routes-api-openapi.yml",
-    "mile-settlement-webhook-api-openapi.yml",
-    "mile-vehicles-api-openapi.yml",
-    "mile-warehouse-inbound-orders-api-openapi.yml",
-    "mile-webhooks-api-openapi.yml"
+    "_original/mile-partner-api-openapi-original.json"
   ],
   "outputs": [
     "mile-aramex-api-openapi.yml",
@@ -43,6 +26,29 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "mile-partner-api-openapi-original.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "mile-aramex-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-debug-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-drivers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-export-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-login-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-order-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-order-optimization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-order-webhook-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-order-with-dynamic-merchant-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-payment-terms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-products-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-promotion-bundle-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-routes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-settlement-webhook-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-vehicles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-warehouse-inbound-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mile-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
